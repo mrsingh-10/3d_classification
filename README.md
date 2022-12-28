@@ -1,5 +1,20 @@
-# 3d_classification
-NNDL Project
+# 3d_classification - NNDL Project
+desc...
+## Overview ##
+* [Group Members](#group-members)
+* [Datasets](#datasets)
+* [Model](#model)
+    
+## Group members ##
+| Surname       | Name          | ID            |
+| ------------- | ------------- | ------------- |
+| D'antimo	    | Simone	    | 2052413	    |
+| Singh	        | Harjot	    | 2053081	    |
+
+## Datasets ##
+ModelNet10 -> ModelNet40
+
+## Model ##
 
 
 OneNote link - accessible only through UNIPD account:
