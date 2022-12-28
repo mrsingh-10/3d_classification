@@ -2,5 +2,5 @@
 NNDL Project
 
 
-OneNote link:
-https://unipdit-my.sharepoint.com/:o:/g/personal/harjot_singh_studenti_unipd_it/ElBli9iuO_JAjE5xBWZAewkB2p16wybBf7eOUP6VC5mMsA
+OneNote link - accessible only through UNIPD account:
+https://unipdit-my.sharepoint.com/:o:/g/personal/harjot_singh_studenti_unipd_it/Eqh4NmTWSnlFioEREt1WNiUBKgzuq5WE-DEU7Y40BdJGyQ?e=wCbRAI
