@@ -92,17 +92,3 @@ exportVoxelGrid(current_outputModel,voxelGrid)
 
 ## Import voxelgrid
 show(importVoxelGrid(current_outputModel))
-
-### Not working fine:
-# mesh_smp = mesh.simplify_quadric_decimation(target_number_of_triangles=500)
-# print(
-#     f'Simplified mesh has {len(mesh_smp.vertices)} vertices and {len(mesh_smp.triangles)} triangles'
-# )
-# exportVoxelFromMesh(mesh_smp, vox_base+"04"+outputExtension)
-
-# mesh_smp = mesh.simplify_quadric_decimation(target_number_of_triangles=200)
-# print(
-#     f'Simplified mesh has {len(mesh_smp.vertices)} vertices and {len(mesh_smp.triangles)} triangles'
-# )
-# exportVoxelFromMesh(mesh_smp, vox_base+"05"+outputExtension)
-
