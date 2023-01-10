@@ -8,6 +8,7 @@ class HelperClass:
     INPUT_EXTENTION = ".off"
     OUTPUT_EXTENTION = ".ply"
     VOXEL_SIZE_DIVIDER = 64
+    VOXEL_GRID_FOLDER = "Output"
 
 
     def __init__(self,SAMPLES=64**3,VOXEL_SIZE=0.01,INPUT_EXTENTION=".off",OUTPUT_EXTENTION = ".ply",VOXEL_SIZE_DIVIDER=64):
@@ -68,7 +69,7 @@ class HelperClass:
             o3d.visualization.draw_geometries([view])
 
     @classmethod
-    def getFoldersFromModel(cls,model, isTestModel):
+    def getFoldersFromModel(cls,model, isTestModel, outputDirName=VOXEL_GRID_FOLDER):
         baseDIR = os.path.dirname(__file__)
         test = isTestModel
 
@@ -77,7 +78,7 @@ class HelperClass:
         modelFolder = "_".join(map(str,temp))
 
         modelNetDIR = os.path.join(baseDIR,"ModelNet10")
-        outputDIR = os.path.join(baseDIR,"Output")
+        outputDIR = os.path.join(baseDIR,outputDirName)
         modelFolderOutput = os.path.join(outputDIR,modelFolder)
 
         current_inputModel = os.path.join(modelNetDIR,modelFolder,"test" if test else "train",model+cls.INPUT_EXTENTION)

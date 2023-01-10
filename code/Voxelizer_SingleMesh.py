@@ -1,86 +1,38 @@
+from HelperClass import HelperClass as Helper
+
 import os
-import numpy as np
 import open3d as o3d
 
-# RENAMING mesh2voxelGrid_o3d.py -> Voxelizer_SingleModel
-
-SAMPLES = 64**3         # Samples to be sampled from meshes
-VOXEL_SIZE = 0.01        # L/W/H of each voxel
-VOXEL_SIZE_DIVIDER = 64
-INPUT_EXTENTION = ".off"
-OUTPUT_EXTENTION = ".ply"
-
-# models = ["bathtub", "bed", "chair", "desk", "dresser", "monitor", "night_stand", "sofa", "table", "toilet" ]
-
-# UTILs
-def show(view,standalone=False):
-    if(standalone):
-        o3d.visualization.draw([view])
-    else:
-        o3d.visualization.draw_geometries([view])
-
-# MESH from os path
-def getMesh(path):
-    return o3d.io.read_triangle_mesh(path)
-
-# POINT CLOUD
-def getPointCloud(mesh, N=SAMPLES, poisson=False):
-    if(poisson):
-        return mesh.sample_points_poisson_disk(N)
-    return mesh.sample_points_uniformly(number_of_points=N)
-
-# VOXEL GRID
-def getVoxelGridFromPointCloud(pcd, voxelSize=VOXEL_SIZE):
-    return o3d.geometry.VoxelGrid.create_from_point_cloud(pcd,voxel_size=voxelSize)
-
-def getVoxelGridFromMesh(mesh, voxelSize=VOXEL_SIZE):
-    ## Fit to unit cube.
-    mesh.scale(1 / np.max(mesh.get_max_bound() - mesh.get_min_bound()), center=mesh.get_center())
-    return o3d.geometry.VoxelGrid.create_from_triangle_mesh(mesh, voxel_size=voxelSize)
-
-def exportPointCloud(filename,pointCloud,compressed=False):
-    o3d.io.write_point_cloud(filename, pointCloud, write_ascii=True, compressed=compressed, print_progress=True)
-
-def exportVoxelGrid(filename,voxelGrid,compressed=False):
-    o3d.io.write_voxel_grid(filename, voxelGrid, write_ascii=False, compressed=compressed, print_progress=False)
-    
-def importPointCloud(filename):
-    return o3d.io.read_point_cloud(filename, format='auto',remove_nan_points=False, remove_infinite_points=False, print_progress=True)
-
-def importVoxelGrid(filename):
-    return o3d.io.read_voxel_grid(filename, format='auto', print_progress=True)
-
 # DEMO CALLS
-baseDIR = os.path.dirname(__file__)
 
-modelNetDIR = os.path.join(baseDIR,"ModelNet10")
-
-test = True
+outputDirName = "Test"
+isTestModel = True
 model = "bathtub_0107" #"table_0116" #ok with /64
-                    # "table_0361" ok only with export with pcd
-temp = model.split("_")
-temp.pop()
-modelFolder = "_".join(map(str,temp))
+                       # "table_0361" ok only with export with pcd
 
-current_inputModel = os.path.join(modelNetDIR,modelFolder,"test" if test else "train",model+INPUT_EXTENTION)
+current_inputModel, current_outputModel = Helper.getFoldersFromModel(model,isTestModel, outputDirName)
+print(current_inputModel,current_outputModel)
 
-outputDIR = os.path.join(baseDIR,"Test")
-modelFolderOutput = os.path.join(outputDIR,modelFolder)
-
-if not os.path.exists(outputDIR):os.makedirs(outputDIR)
-if not os.path.exists(modelFolderOutput):os.makedirs(modelFolderOutput)
-if not os.path.exists(os.path.join(modelFolderOutput,"test")):os.makedirs(os.path.join(modelFolderOutput,"test"))
-if not os.path.exists(os.path.join(modelFolderOutput,"train")): os.makedirs(os.path.join(modelFolderOutput,"train"))
-
-current_outputModel = os.path.join(modelFolderOutput,"test" if test else "train",model+""+OUTPUT_EXTENTION)
-print(current_inputModel)
-print(current_outputModel)
 print("IS FILE PRESENT:",os.path.isfile(current_inputModel))
 
-mesh = getMesh(current_inputModel).compute_vertex_normals()
+def createFoldersForModel(model):
+    temp = model.split("_")
+    temp.pop()
+    modelFolder = "_".join(map(str,temp))
+    
+    baseDIR = os.path.dirname(__file__)
+    outputDIR = os.path.join(baseDIR,outputDirName)
+    modelFolderOutput = os.path.join(outputDIR,modelFolder)
+
+    if not os.path.exists(outputDIR):os.makedirs(outputDIR)
+    if not os.path.exists(modelFolderOutput):os.makedirs(modelFolderOutput)
+    if not os.path.exists(os.path.join(modelFolderOutput,"test")):os.makedirs(os.path.join(modelFolderOutput,"test"))
+    if not os.path.exists(os.path.join(modelFolderOutput,"train")): os.makedirs(os.path.join(modelFolderOutput,"train"))
+
+mesh = Helper.importMesh(current_inputModel).compute_vertex_normals()
 
 # getting the voxel size required
-voxel_size = max(mesh.get_max_bound() - mesh.get_min_bound()) / VOXEL_SIZE_DIVIDER
+voxel_size = max(mesh.get_max_bound() - mesh.get_min_bound()) / Helper.VOXEL_SIZE_DIVIDER
 print(f'maxBound={mesh.get_max_bound()}, minBound={mesh.get_min_bound()}, center={mesh.get_center()}')
 print(f'voxel_size = {voxel_size:e}')
 print(f'Input mesh has {len(mesh.vertices)} vertices and {len(mesh.triangles)} triangles')
@@ -89,18 +41,18 @@ mesh_smp = mesh.simplify_vertex_clustering(voxel_size=voxel_size,contraction=o3d
 print(f'Simplified mesh has {len(mesh_smp.vertices)} vertices and {len(mesh_smp.triangles)} triangles')
 
 # GET & SHOW POINT CLOUD
-pcd = getPointCloud(mesh_smp)
-show(pcd)
+pcd = Helper.getPointCloudFromMesh(mesh_smp)
+Helper.show(pcd)
 
 # EXPORT VOXELGRID OF THE Simplified vertex clustering
-voxelGrid = getVoxelGridFromMesh(mesh_smp,0.01)
+voxelGrid = Helper.getVoxelGridFromMesh(mesh_smp,0.01)
 if(voxelGrid.has_voxels()):
-    exportVoxelGrid(current_outputModel,voxelGrid)
+    Helper.exportVoxelGrid(current_outputModel,voxelGrid)
 else:
     print(voxelGrid)
-    exportVoxelGrid(current_outputModel,getVoxelGridFromPointCloud(pcd,voxel_size))
+    Helper.exportVoxelGrid(current_outputModel,Helper.getVoxelGridFromPointCloud(pcd,voxel_size))
     
 #show(voxelGrid)
 
 ## Import voxelgrid
-show(importVoxelGrid(current_outputModel))
+Helper.show(Helper.importVoxelGrid(current_outputModel))
