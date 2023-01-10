@@ -5,7 +5,9 @@ from HelperClass import HelperClass as Helper
 # REMOVED UPPER PART of table_0116
 
 # DEMO CALLS
-current_inputModel,current_outputModel = Helper.getFoldersFromModel(model = "bathtub_0107",isTestModel = True)
+model = "night_stand_0030"
+isTestModel = False
+current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel)
 
 mesh = Helper.importMesh(current_inputModel)
 Helper.show(mesh)

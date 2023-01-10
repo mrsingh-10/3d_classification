@@ -4,7 +4,7 @@ import time
 from joblib import Parallel, delayed
 from HelperClass import HelperClass as Helper
 
-
+# PARAMETERS
 SAMPLES = 64**3         # Samples to be sampled from meshes
 VOXEL_SIZE = 0.01        # L/W/H of each voxel
 INPUT_EXTENTION = ".off"
@@ -38,9 +38,11 @@ def meshToVoxel(model,test):
 baseDIR = os.path.dirname(__file__)
 modelNetDIR = os.path.join(baseDIR,"ModelNet10")
 
-# test = True
 models = ["bathtub", "bed", "chair", "desk", "dresser", "monitor", "night_stand","sofa","table", "toilet"]
 
+#models = ["night_stand"]
+#for modelFolder in models:
+#    test = False
 for modelFolder, test in ((x, y) for x in models for y in (True,False)):
     print(f'current modelFolderName= {modelFolder} and isTestFolder={test}')
     # PRELIMINARY STEPS for getting the input folder and creating respective output folder
