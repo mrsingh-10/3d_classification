@@ -2,8 +2,11 @@ import os
 import numpy as np
 import open3d as o3d
 
+# RENAMING mesh2voxelGrid_o3d.py -> Voxelizer_SingleModel
+
 SAMPLES = 64**3         # Samples to be sampled from meshes
 VOXEL_SIZE = 0.01        # L/W/H of each voxel
+VOXEL_SIZE_DIVIDER = 64
 INPUT_EXTENTION = ".off"
 OUTPUT_EXTENTION = ".ply"
 
@@ -52,15 +55,16 @@ baseDIR = os.path.dirname(__file__)
 
 modelNetDIR = os.path.join(baseDIR,"ModelNet10")
 
-test = False
-model = "night_stand_0001" #.off
+test = True
+model = "bathtub_0107" #"table_0116" #ok with /64
+                    # "table_0361" ok only with export with pcd
 temp = model.split("_")
 temp.pop()
 modelFolder = "_".join(map(str,temp))
 
 current_inputModel = os.path.join(modelNetDIR,modelFolder,"test" if test else "train",model+INPUT_EXTENTION)
 
-outputDIR = os.path.join(baseDIR,"Output")
+outputDIR = os.path.join(baseDIR,"Test")
 modelFolderOutput = os.path.join(outputDIR,modelFolder)
 
 if not os.path.exists(outputDIR):os.makedirs(outputDIR)
@@ -68,14 +72,16 @@ if not os.path.exists(modelFolderOutput):os.makedirs(modelFolderOutput)
 if not os.path.exists(os.path.join(modelFolderOutput,"test")):os.makedirs(os.path.join(modelFolderOutput,"test"))
 if not os.path.exists(os.path.join(modelFolderOutput,"train")): os.makedirs(os.path.join(modelFolderOutput,"train"))
 
-current_outputModel = os.path.join(modelFolderOutput,"test" if test else "train",model+OUTPUT_EXTENTION)
+current_outputModel = os.path.join(modelFolderOutput,"test" if test else "train",model+""+OUTPUT_EXTENTION)
 print(current_inputModel)
 print(current_outputModel)
 print("IS FILE PRESENT:",os.path.isfile(current_inputModel))
 
-mesh = getMesh(current_inputModel) #.compute_vertex_normals()
+mesh = getMesh(current_inputModel).compute_vertex_normals()
 
-voxel_size = max(mesh.get_max_bound() - mesh.get_min_bound()) / 32
+# getting the voxel size required
+voxel_size = max(mesh.get_max_bound() - mesh.get_min_bound()) / VOXEL_SIZE_DIVIDER
+print(f'maxBound={mesh.get_max_bound()}, minBound={mesh.get_min_bound()}, center={mesh.get_center()}')
 print(f'voxel_size = {voxel_size:e}')
 print(f'Input mesh has {len(mesh.vertices)} vertices and {len(mesh.triangles)} triangles')
 
@@ -83,12 +89,18 @@ mesh_smp = mesh.simplify_vertex_clustering(voxel_size=voxel_size,contraction=o3d
 print(f'Simplified mesh has {len(mesh_smp.vertices)} vertices and {len(mesh_smp.triangles)} triangles')
 
 # GET & SHOW POINT CLOUD
-show(getPointCloud(mesh_smp))
+pcd = getPointCloud(mesh_smp)
+show(pcd)
 
 # EXPORT VOXELGRID OF THE Simplified vertex clustering
 voxelGrid = getVoxelGridFromMesh(mesh_smp,0.01)
+if(voxelGrid.has_voxels()):
+    exportVoxelGrid(current_outputModel,voxelGrid)
+else:
+    print(voxelGrid)
+    exportVoxelGrid(current_outputModel,getVoxelGridFromPointCloud(pcd,voxel_size))
+    
 #show(voxelGrid)
-exportVoxelGrid(current_outputModel,voxelGrid)
 
 ## Import voxelgrid
 show(importVoxelGrid(current_outputModel))
