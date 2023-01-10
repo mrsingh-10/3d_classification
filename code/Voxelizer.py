@@ -39,11 +39,10 @@ baseDIR = os.path.dirname(__file__)
 modelNetDIR = os.path.join(baseDIR,"ModelNet10")
 
 # test = True
-#"bathtub", "bed", "chair", "desk", "dresser", "monitor", "night_stand", "sofa"
-models = ["bathtub", "bed", "chair", "desk", "dresser", "monitor", "night_stand", "sofa","table", "toilet"]
+models = ["bathtub", "bed", "chair", "desk", "dresser", "monitor", "night_stand","sofa","table", "toilet"]
 
 for modelFolder, test in ((x, y) for x in models for y in (True,False)):
-    print(modelFolder,test)
+    print(f'current modelFolderName= {modelFolder} and isTestFolder={test}')
     # PRELIMINARY STEPS for getting the input folder and creating respective output folder
     
     # 1) Getting INPUT FILES
@@ -72,5 +71,5 @@ for modelFolder, test in ((x, y) for x in models for y in (True,False)):
 
     # 3) Voxelizing all input files
     t = time.time()
-    Parallel(n_jobs=4)(delayed(meshToVoxel)(path,True) for path in inputModels) #n_jobs=-2 # use all cpu exept 1
+    Parallel(n_jobs=4)(delayed(meshToVoxel)(path,test) for path in inputModels) #n_jobs=-2 # use all cpu exept 1
     print("Time:",time.time() - t)
