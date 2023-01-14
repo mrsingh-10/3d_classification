@@ -5,45 +5,36 @@ from HelperClass import HelperClass as Helper
 # REMOVED UPPER PART of table_0116
 
 # DEMO CALLS
-model = "table_0361"
-isTestModel = False
+model = "chair_0986"
+isTestModel = True
 current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel)
 
+# Importing mesh
 mesh = Helper.importMesh(current_inputModel)
-#Helper.show(mesh)
 
-# getting bounding box 
-import open3d as o3d
-
+# Getting bounding box 
 bb = mesh.get_axis_aligned_bounding_box()
 bb.color = (255,0,0)
 print(bb)
-o3d.visualization.draw_geometries([mesh,bb])
 
 print(bb.get_max_bound() - bb.get_min_bound())
 print(max(mesh.get_max_bound() - mesh.get_min_bound())/32)
 
+# Scaling
 mesh.scale(max(mesh.get_max_bound() - mesh.get_min_bound())/32, mesh.get_center())
 
+# Getting new BB
 bb2 = mesh.get_axis_aligned_bounding_box()
 bb2.color = (0,0,255)
 print(bb2)
-o3d.visualization.draw_geometries([mesh,bb,bb2])
 
-#mesh_smp = mesh.simplify_vertex_clustering(voxel_size=0.01,contraction=o3d.geometry.SimplificationContraction.Average)
-#Helper.showComposed([mesh_smp,bb,bb2])
-#print(f'Simplified mesh has {len(mesh_smp.vertices)} vertices and {len(mesh_smp.triangles)} triangles')
+# Showing mesh with BBs
+Helper.showComposed([mesh,bb,bb2])
+
 # Voxelization
 voxelGrid = Helper.getVoxelGridFromMesh(mesh,0.1/3)
 
-o3d.visualization.draw_geometries([voxelGrid])
-
-
-
-
-
-
-
+#Helper.showComposed([voxelGrid]) #,bb2
 
 # POINT CLOUD
 #pcd = Helper.getPointCloudFromMesh(mesh,N=64**3)
@@ -58,3 +49,5 @@ o3d.visualization.draw_geometries([voxelGrid])
 
 # Exported VoxelGrid
 #Helper.show(Helper.getVoxelGridFromMesh(mesh))
+
+Helper.show(Helper.importVoxelGrid(current_outputModel))
