@@ -1,6 +1,6 @@
 *.zip
 code/ModelNet10/*
 code/.vscode/*
-code/Output/*
+code/Output*
 code/Test/*
 code/__pycache__/*

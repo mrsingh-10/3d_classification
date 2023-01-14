@@ -2,6 +2,8 @@ import os
 import numpy as np
 import open3d as o3d
 
+# TODO: Bring folder creation inside the helper
+
 class HelperClass:
     SAMPLES = 64**3         # Samples to be sampled from meshes
     VOXEL_SIZE = 0.01        # L/W/H of each voxel
@@ -63,11 +65,14 @@ class HelperClass:
     # UTILs
     @classmethod
     def show(cls,view,standalone=False):
-        if(standalone):
-            o3d.visualization.draw([view])
-        else:
-            o3d.visualization.draw_geometries([view])
+        cls.showComposed([view],standalone)
 
+    @classmethod
+    def showComposed(cls,view,standalone=False):
+        if(standalone):
+            o3d.visualization.draw(view)
+        else:
+            o3d.visualization.draw_geometries(view)
     @classmethod
     def getFoldersFromModel(cls,model, isTestModel, outputDirName=VOXEL_GRID_FOLDER):
         baseDIR = os.path.dirname(__file__)

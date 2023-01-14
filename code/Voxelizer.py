@@ -17,6 +17,16 @@ def meshToVoxel(model,test):
     
     # Importing the mesh from the disk
     mesh = Helper.importMesh(current_inputModel) #.compute_vertex_normals()
+    voxelGrid = Helper.getVoxelGridFromMesh(mesh,0.1/3)
+    Helper.exportVoxelGrid(current_outputModel,voxelGrid)
+
+def meshToVoxel_v1(model,test):
+    # IMPORT STEP
+    print("Current model:", model)
+    current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel=test)
+    
+    # Importing the mesh from the disk
+    mesh = Helper.importMesh(current_inputModel) #.compute_vertex_normals()
 
     # VOXELIZATION STEP
     # Clustering to reduce the number and aggregate voxels
