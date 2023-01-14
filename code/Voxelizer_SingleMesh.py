@@ -29,7 +29,8 @@ def createFoldersForModel(model):
     if not os.path.exists(os.path.join(modelFolderOutput,"test")):os.makedirs(os.path.join(modelFolderOutput,"test"))
     if not os.path.exists(os.path.join(modelFolderOutput,"train")): os.makedirs(os.path.join(modelFolderOutput,"train"))
 
-mesh = Helper.importMesh(current_inputModel).compute_vertex_normals()
+mesh = Helper.importMesh(current_inputModel)#.compute_vertex_normals()
+mesh.scale(max(mesh.get_max_bound() - mesh.get_min_bound())/32, mesh.get_center())
 
 # getting the voxel size required
 voxel_size = max(mesh.get_max_bound() - mesh.get_min_bound()) / Helper.VOXEL_SIZE_DIVIDER
@@ -45,7 +46,7 @@ pcd = Helper.getPointCloudFromMesh(mesh_smp)
 Helper.show(pcd)
 
 # EXPORT VOXELGRID OF THE Simplified vertex clustering
-voxelGrid = Helper.getVoxelGridFromMesh(mesh_smp,0.01)
+voxelGrid = Helper.getVoxelGridFromMesh(mesh,0.1/3)
 if(voxelGrid.has_voxels()):
     Helper.exportVoxelGrid(current_outputModel,voxelGrid)
 else:
