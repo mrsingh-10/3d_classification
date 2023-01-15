@@ -11,7 +11,7 @@ isTestModel = False
 VOXEL_GRID_SIZE = 64
 # TODO: Helper = Helper(VOXEL_GRID_SIZE=VOXEL_GRID_SIZE)
 
-current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel)
+current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel,"Output")
 Helper.describeVoxels(Helper.importVoxelGrid(current_outputModel).get_voxels(),VOXEL_GRID_SIZE)
 
 
@@ -42,5 +42,5 @@ for modelFolder, test in ((x, y) for x in models for y in (True,False)):
 
     # 3) Voxelizing all input files
     for path in inputModels:
-        current_inputModel,current_outputModel = Helper.getFoldersFromModel(path,test)
+        current_inputModel,current_outputModel = Helper.getFoldersFromModel(path,test,"Output")
         Helper.describeVoxels(Helper.importVoxelGrid(current_outputModel).get_voxels(),VOXEL_GRID_SIZE)

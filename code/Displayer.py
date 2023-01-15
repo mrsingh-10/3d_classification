@@ -7,7 +7,7 @@ from HelperClass import HelperClass as Helper
 # DEMO CALLS
 model = "chair_0986"
 isTestModel = True
-current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel)
+current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel,"Output")
 
 # Importing mesh
 mesh = Helper.importMesh(current_inputModel)

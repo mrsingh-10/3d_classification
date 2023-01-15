@@ -75,8 +75,9 @@ class HelperClass:
             o3d.visualization.draw(view)
         else:
             o3d.visualization.draw_geometries(view)
+    
     @classmethod
-    def getFoldersFromModel(cls,model, isTestModel, outputDirName=VOXEL_GRID_FOLDER):
+    def getFoldersFromModel(cls,model, isTestModel, outputDirName):
         baseDIR = os.path.dirname(__file__)
         test = isTestModel
 
@@ -126,9 +127,13 @@ class HelperClass:
         outputDIR = os.path.join(baseDIR,outputDirName)
         modelFolderOutput = os.path.join(outputDIR,modelFolder)
 
+        #print(f"Creating folder {outputDIR}")
         if not os.path.exists(outputDIR):os.makedirs(outputDIR)
+        #print(f"Creating folder {modelFolderOutput}")
         if not os.path.exists(modelFolderOutput):os.makedirs(modelFolderOutput)
+        #print(f'Creating folder {os.path.join(modelFolderOutput,"test")}')
         if not os.path.exists(os.path.join(modelFolderOutput,"test")):os.makedirs(os.path.join(modelFolderOutput,"test"))
+        #print(f'Creating folder {os.path.join(modelFolderOutput,"train")}')
         if not os.path.exists(os.path.join(modelFolderOutput,"train")): os.makedirs(os.path.join(modelFolderOutput,"train"))
 
     @classmethod
