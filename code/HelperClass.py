@@ -27,6 +27,12 @@ class HelperClass:
         if(poisson):
             return mesh.sample_points_poisson_disk(N)
         return mesh.sample_points_uniformly(number_of_points=N)
+    
+    @classmethod
+    def getVoxelGridFromArray(cls,ThreeDimArray):
+        pc=o3d.geometry.PointCloud()
+        pc.points=o3d.utility.Vector3dVector(ThreeDimArray)
+        return cls.getVoxelGridFromPointCloud(pc,voxelSize=1)
 
     # VOXEL GRID
     @classmethod
