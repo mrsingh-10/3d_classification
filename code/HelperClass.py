@@ -122,6 +122,18 @@ class HelperClass:
         return (current_inputModel,current_outputModel)
 
     @classmethod
+    def getFolderFromModel(cls, model, isTestModel, rootModelFolder, isMesh, suffix=""):
+        baseDIR = os.path.dirname(__file__)
+
+        temp = model.split("_")
+        temp.pop()
+        modelFolder = "_".join(map(str,temp))
+
+        rootDIR = os.path.join(baseDIR, rootModelFolder)
+
+        return os.path.join(rootDIR,modelFolder,"test" if isTestModel else "train",model+str(suffix)+(cls.INPUT_EXTENTION if isMesh else cls.OUTPUT_EXTENTION))
+
+    @classmethod
     def describeVoxels(cls,voxels,voxelGridSize, displayMin=True, displayMax=True,):
         displayTotal=True
         maxArray = np.array([0, 0, 0],np.int32)
