@@ -24,18 +24,19 @@ print(sectors)
 def exportRotated(model,isTestModel):
     # IMPORT STEP
     print("Current model:", model)
-    filename = Helper.getFolderFromModel(model, isTestModel, "Output_v3", isMesh=False)
-    voxelGrid = Helper.importVoxelGrid(filename)
+    importFileName = Helper.getFolderFromModel(model, isTestModel, "Output_v3", isMesh=False)
+    voxelGrid = Helper.importVoxelGrid(importFileName)
     
     # Get 3 different rotations and export
     for number in sample(sectors, 3):
         rotated = Helper.getVGRotated(voxelGrid,rz=(number*2*np.pi/12))
-        fileName = Helper.getFolderFromModel(path, isTestModel, outputDirName, isMesh=False, suffix="_"+str(number*30))
-        Helper.exportVoxelGrid(fileName,rotated)
+        exportFileName = Helper.getFolderFromModel(model, isTestModel, outputDirName, isMesh=False, suffix="_"+str(number*30))
+        print("Exporting",model+"_"+str(number*30))
+        Helper.exportVoxelGrid(exportFileName,rotated)
 
 models = ["bathtub", "bed", "chair", "desk", "dresser", "monitor", "night_stand","sofa","table", "toilet"]
 
-models = ["bathtub"]
+# models = ["bathtub"]
 #for modelFolder in models:
 #    test = False
 
