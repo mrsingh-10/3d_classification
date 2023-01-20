@@ -20,7 +20,7 @@ def arrayOf(voxelGrid):
 
 
 # main code:
-
+randomsGlobal = [0 for _ in range (1,12) ]
 sectors = [i for i in range (1,12) ]
 print(sectors)
 
@@ -32,6 +32,9 @@ def exportRotated(model,isTestModel):
     
     # Get 3 different rotations and export
     for number in sample(sectors, 3):
+
+        randoms[number-1] += 1
+        randomsGlobal[number-1] += 1
         rotated = Helper.getVGRotated(voxelGrid, voxelGridSize=VOXEL_GRID_SIZE, rz=(number*2*np.pi/12))
         exportFileName = Helper.getFullPathForModel(model, isTestModel, outputDirName, isMesh=False, suffix="_"+str(number*30))
         print("Exporting",model+"_"+str(number*30))
@@ -39,7 +42,7 @@ def exportRotated(model,isTestModel):
 
 models = ["bathtub", "bed", "chair", "desk", "dresser", "monitor", "night_stand","sofa","table", "toilet"]
 
-# models = ["bathtub"]
+#models = ["bathtub"]
 #for modelFolder in models:
 #    test = False
 
@@ -48,10 +51,11 @@ inputDirName = os.path.join(baseDIR,"Output_v3")
 INPUT_EXTENTION = ".ply"
 OUTPUT_EXTENTION = ".ply"
 
-outputDirName = "Output_ROTATED"
+outputDirName = "Output_ROTATED_v3"
 
 total = time.time()
 for modelFolder, test in ((x, y) for x in models for y in (True,False)):
+    randoms = [0 for _ in range (1,12) ]
     print(f'current modelFolderName= {modelFolder} and isTestFolder={test}')
     # PRELIMINARY STEPS for getting the input folder and creating respective output folder
     
@@ -75,7 +79,11 @@ for modelFolder, test in ((x, y) for x in models for y in (True,False)):
 
     # 3) Voxelizing all input files
     t = time.time()
-    Parallel(n_jobs=4)(delayed(exportRotated)(path,test) for path in inputModels) #n_jobs=-2 # use all cpu exept 1
-
+    for path in inputModels:
+        exportRotated(path,test)
+    #Parallel(n_jobs=4)(delayed(exportRotated)(path,test) for path in inputModels) #n_jobs=-2 # use all cpu exept 1
+    print(f"Randoms: {randoms}")
     print("Time:",time.time() - t)
 print("Total Time:",time.time() - total)
+
+print(f"Randoms: {randomsGlobal}")
