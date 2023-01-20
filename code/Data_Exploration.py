@@ -3,46 +3,58 @@ from HelperClass import HelperClass as Helper
 import os
 
 print(o3d.__version__)
-#Open a file 
+# Open a file
 # DEMO CALLS
-model = "night_stand_0030"
-isTestModel = False
-VOXEL_GRID_SIZE = 64
+model = "bed_0516"
+isTestModel = True
+VOXEL_GRID_SIZE = 32
+outputFolderName = "Output_ROTATED_v2"
 # TODO: Helper = Helper(VOXEL_GRID_SIZE=VOXEL_GRID_SIZE)
 
-current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel,"Output")
-Helper.describeVoxels(Helper.importVoxelGrid(current_outputModel).get_voxels(),VOXEL_GRID_SIZE)
+filename = Helper.getFullPathForModel(
+    model, isTestModel, outputFolderName, isMesh=False, suffix="_240")
+voxelGrid = Helper.importVoxelGrid(filename)
+Helper.show(voxelGrid)
+Helper.describeVoxels(voxelGrid.get_voxels(), VOXEL_GRID_SIZE)
 
 
 def forEach(doThis):
     # dooing for all the models
     baseDIR = os.path.dirname(__file__)
-    modelNetDIR = os.path.join(baseDIR,"ModelNet10")
+    rootModelsDirName = os.path.join(baseDIR, outputFolderName)
 
-    models = ["bathtub", "bed", "chair", "desk", "dresser", "monitor", "night_stand","sofa","table", "toilet"]
+    models = ["bathtub", "bed", "chair", "desk", "dresser",
+              "monitor", "night_stand", "sofa", "table", "toilet"]
+    models = ["bed"]
 
-    for modelFolder, test in ((x, y) for x in models for y in (True,False)):
-        print(f'current modelFolderName= {modelFolder} and isTestFolder={test}')
+    for modelFolder, isTestModel in ((x, y) for x in models for y in (True, False)):
+        print(
+            f'current modelFolderName= {modelFolder} and isTestFolder={isTestModel}')
         # PRELIMINARY STEPS for getting the input folder and creating respective output folder
-        
+
         # 1) Getting INPUT FILES
-        inputDIR = os.path.join(modelNetDIR,modelFolder,"test" if test else "train")
+
+        inputDIR = os.path.join(
+            rootModelsDirName, modelFolder, "test" if isTestModel else "train")
         print(f'Working on {modelFolder} in folder {inputDIR}')
         # print(os.path.isdir(inputDIR))
-        
+
         # Getting the list of all mesh in the directory 'modelFolder'
         inputModels = []
+        INPUT_EXTENTION = ".ply"
         # Iterate directory
         for path in os.listdir(inputDIR):
             # check if current path is an expected file
-            if os.path.isfile(os.path.join(inputDIR, path)) and os.path.join(inputDIR, path).endswith(Helper.INPUT_EXTENTION):
+            if os.path.isfile(os.path.join(inputDIR, path)) and os.path.join(inputDIR, path).endswith(INPUT_EXTENTION):
                 # append only the file name
                 inputModels.append(os.path.splitext(path)[0])
-        #print(inputModels)
+        # print(inputModels)
 
         # 3) Voxelizing all input files
         for path in inputModels:
-            current_inputModel,current_outputModel = Helper.getFoldersFromModel(path,test,"Output_v2")
-            doThis(Helper.importVoxelGrid(current_outputModel).get_voxels(),VOXEL_GRID_SIZE)
+            filename = Helper.getFullPathForModel(
+                path, isTestModel, outputFolderName, isMesh=False, hasRotaions=True)
+            #print(path)  # ,filename
+            doThis(Helper.importVoxelGrid(filename).get_voxels(), VOXEL_GRID_SIZE)
 
 forEach(Helper.describeVoxels)

@@ -5,13 +5,16 @@ import time
 from joblib import Parallel, delayed
 import os
 
+# PARAMETERS
+VOXEL_GRID_SIZE = 32        # L/W/H of each voxel
+
 def arrayOf(voxelGrid):
     return np.array(list(map(lambda x:x.grid_index,voxelGrid.get_voxels())))
 # DEMO CALLS
 #model = "toilet_0052"
 #isTestModel = False
 
-#filename = Helper.getFolderFromModel(model, isTestModel, "Output_v3", isMesh=False)
+#filename = Helper.getFullPathForModel(model, isTestModel, "Output_v3", isMesh=False)
 #voxelGrid = Helper.importVoxelGrid(filename)
 #Helper.show(voxelGrid)
 
@@ -24,13 +27,13 @@ print(sectors)
 def exportRotated(model,isTestModel):
     # IMPORT STEP
     print("Current model:", model)
-    importFileName = Helper.getFolderFromModel(model, isTestModel, "Output_v3", isMesh=False)
+    importFileName = Helper.getFullPathForModel(model, isTestModel, "Output_v3", isMesh=False)
     voxelGrid = Helper.importVoxelGrid(importFileName)
     
     # Get 3 different rotations and export
     for number in sample(sectors, 3):
-        rotated = Helper.getVGRotated(voxelGrid,rz=(number*2*np.pi/12))
-        exportFileName = Helper.getFolderFromModel(model, isTestModel, outputDirName, isMesh=False, suffix="_"+str(number*30))
+        rotated = Helper.getVGRotated(voxelGrid, voxelGridSize=VOXEL_GRID_SIZE, rz=(number*2*np.pi/12))
+        exportFileName = Helper.getFullPathForModel(model, isTestModel, outputDirName, isMesh=False, suffix="_"+str(number*30))
         print("Exporting",model+"_"+str(number*30))
         Helper.exportVoxelGrid(exportFileName,rotated)
 
