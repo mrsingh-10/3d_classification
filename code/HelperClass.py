@@ -29,10 +29,13 @@ class HelperClass:
         return mesh.sample_points_uniformly(number_of_points=N)
     
     @classmethod
-    def getVoxelGridFromArray(cls,ThreeDimArray):
+    def getVoxelGridFromArray(cls,ThreeDimArray, voxelGridSize=VOXEL_GRID_SIZE, padding=0):
         pc=o3d.geometry.PointCloud()
         pc.points=o3d.utility.Vector3dVector(ThreeDimArray)
-        return cls.getVoxelGridFromPointCloud(pc,voxelSize=1)
+        pc.scale(1 / np.max(pc.get_max_bound() - pc.get_min_bound()), center=pc.get_center())
+
+        voxelSize = 1/(voxelGridSize-(1+padding*2))
+        return cls.getVoxelGridFromPointCloud(pc,voxelSize)
 
     # VOXEL GRID
     @classmethod
@@ -83,7 +86,7 @@ class HelperClass:
             o3d.visualization.draw_geometries(view)
     
     @classmethod
-    def getVGRotated(cls,voxelGrid, rx=0,ry=0,rz=0):
+    def getVGRotated(cls,voxelGrid, voxelGridSize, rx=0,ry=0,rz=0):
         grid_index_array = np.array(list(map(lambda x:x.grid_index,voxelGrid.get_voxels())))
         
         # getting rotation matrix see https://en.wikipedia.org/wiki/Rotation_matrix
@@ -102,7 +105,7 @@ class HelperClass:
         R[2, 1] = np.cos(b)*np.sin(g)
         R[2, 2] = np.cos(b)*np.cos(g)
         
-        return cls.getVoxelGridFromArray(R.dot(grid_index_array.T).T)
+        return cls.getVoxelGridFromArray(R.dot(grid_index_array.T).T, voxelGridSize)
         
     @classmethod
     def getFoldersFromModel(cls,model, isTestModel, outputDirName):
@@ -122,11 +125,12 @@ class HelperClass:
         return (current_inputModel,current_outputModel)
 
     @classmethod
-    def getFolderFromModel(cls, model, isTestModel, rootModelFolder, isMesh, suffix=""):
+    def getFullPathForModel(cls, model, isTestModel, rootModelFolder, isMesh, suffix="", hasRotaions=False):
         baseDIR = os.path.dirname(__file__)
 
         temp = model.split("_")
         temp.pop()
+        if hasRotaions: temp.pop()
         modelFolder = "_".join(map(str,temp))
 
         rootDIR = os.path.join(baseDIR, rootModelFolder)
