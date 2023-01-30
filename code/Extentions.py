@@ -23,14 +23,13 @@ def getKPartitions(folderName, K=5):
     # PUSHING ALL models in allModels
     allModels = {}
     for modelFolder, isTestModel in ((x, y) for x in models for y in (True, False)):
-        print(
-            f'current modelFolderName= {modelFolder} and isTestFolder={isTestModel}')
+        #print(f'current modelFolderName= {modelFolder} and isTestFolder={isTestModel}')
         # PRELIMINARY STEPS for getting the input folder and creating respective output folder
 
         # 1) Getting INPUT FILES
         inputDIR = os.path.join(
             rootModelsDirName, modelFolder, "test" if isTestModel else "train")
-        print(f'Working on {modelFolder} in folder {inputDIR}')
+        #print(f'Working on {modelFolder} in folder {inputDIR}')
         # print(os.path.isdir(inputDIR))
 
         # Getting the list of all mesh in the directory 'modelFolder'
@@ -72,6 +71,8 @@ def getKPartitions(folderName, K=5):
 sets = getKPartitions(outputFolderName, 5)
 
 for set in sets:
-    for elem in set:
+    for elem in set[:10]:
         print(elem)
     print("------\n")
+
+print([len(s) for s in sets])
