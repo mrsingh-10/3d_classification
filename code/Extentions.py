@@ -135,3 +135,5 @@ sets = getKPartitionsFolderized(outputFolderName, 5, False)
 for idx, set in enumerate(sets):
     print(idx, len(set["bed"]))
 
+
+print(len(sets[0]["bed"]))
