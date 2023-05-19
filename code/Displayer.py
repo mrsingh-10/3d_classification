@@ -5,7 +5,7 @@ from HelperClass import HelperClass as Helper
 # REMOVED UPPER PART of table_0116
 
 # DEMO CALLS
-model = "chair_0986"
+model = "chair_0957"
 isTestModel = True
 current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel,"Output")
 
@@ -32,9 +32,9 @@ print(bb2)
 Helper.showComposed([mesh,bb,bb2])
 
 # Voxelization
-voxelGrid = Helper.getVoxelGridFromMesh(mesh,0.1/3)
+voxelGrid = Helper.getVoxelGridFromMesh(mesh,32)
 
-#Helper.showComposed([voxelGrid]) #,bb2
+Helper.showComposed([voxelGrid]) #,bb2
 
 # POINT CLOUD
 #pcd = Helper.getPointCloudFromMesh(mesh,N=64**3)

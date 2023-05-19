@@ -163,7 +163,13 @@ class HelperClass:
         string += f', minArray={minArray}' if displayMin else ""
         final_str = f'{string}'
 
-        print(final_str)
+        #print(final_str)
+
+        voxelgrid_np = np.array(list(map(lambda x:x.grid_index,voxels)))
+        mean = np.mean(voxelgrid_np, axis=0)
+        std = np.std(voxelgrid_np, axis=0)
+
+        print("m:",mean,"std:",std)
     
     @classmethod
     def createOutputFoldersForModelFolder(cls,modelFolder,outputDirName):
