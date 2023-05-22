@@ -4,18 +4,18 @@ import re
 PRINT = False
 
 path = "C:\\Users\\harjo\\Workspace\\UniPD\\repo\\3d_classification\\models\\orion_ext\\trainingOnly_adam_epoc3k.txt"
-path = "./TrainingOutput/vgnet_v3_adam_1e-02_stuck.txt"
-path = "./TrainingOutput/vgnet_v3_adam_1e-03.txt"
+path = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-02_stuck.txt"
+path = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03.txt"
 
-path400 = "./TrainingOutput/vgnet_v3_adam_1e-03_400.txt"
-path600 = "./TrainingOutput/vgnet_v3_adam_1e-03_600.txt"
-path800 = "./TrainingOutput/vgnet_v3_adam_1e-03_800.txt"
-path1000 = "./TrainingOutput/vgnet_v3_adam_1e-03_1000.txt"
-path1200 = "./TrainingOutput/vgnet_v3_adam_1e-03_1200.txt"
-path1400 = "./TrainingOutput/vgnet_v3_adam_1e-03_1400.txt"
-path1600 = "./TrainingOutput/vgnet_v3_adam_1e-03_1600.txt"
-path1800 = "./TrainingOutput/vgnet_v3_adam_1e-03_1800.txt"
-path2000 = "./TrainingOutput/vgnet_v3_adam_1e-03_2000.txt"
+path400 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_400.txt"
+path600 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_600.txt"
+path800 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_800.txt"
+path1000 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_1000.txt"
+path1200 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_1200.txt"
+path1400 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_1400.txt"
+path1600 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_1600.txt"
+path1800 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_1800.txt"
+path2000 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_2000.txt"
 
 # Val Loss goal [ORION_3k]: 0.2861 
 paths = [path400, path600, path800, path1000, path1200, path1400, path1600, path1800, path2000, path]
