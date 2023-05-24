@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.15)  23 MAY 2023 22:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.15)  24 MAY 2023 22:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,13 +828,13 @@ Underfull \hbox (badness 1789) in paragraph at lines 19--20
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--26
+Underfull \hbox (badness 10000) in paragraph at lines 24--27
 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 30.
+               Default added (so using `tbp') on input line 31.
 
 <resources/distribution.png, id=18, 513.92pt x 292.09125pt>
 File: resources/distribution.png Graphic file (type png)
@@ -842,33 +842,28 @@ File: resources/distribution.png Graphic file (type png)
 Package pdftex.def Info: resources/distribution.png  used on input line 33.
 (pdftex.def)             Requested size: 231.26186pt x 131.43983pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--39
+Underfull \hbox (badness 10000) in paragraph at lines 30--40
 
  []
 
 [3]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 4
-4.
- (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 55.
+               Default added (so using `tbp') on input line 65.
 
-File: resources/distribution.png Graphic file (type png)
-<use resources/distribution.png>
-Package pdftex.def Info: resources/distribution.png  used on input line 58.
-(pdftex.def)             Requested size: 231.26186pt x 131.43983pt.
+<resources/finalTrainDistribution.png, id=23, 550.785pt x 332.442pt>
+File: resources/finalTrainDistribution.png Graphic file (type png)
+<use resources/finalTrainDistribution.png>
+Package pdftex.def Info: resources/finalTrainDistribution.png  used on input li
+ne 67.
+(pdftex.def)             Requested size: 247.85095pt x 149.5975pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--63
+Underfull \hbox (badness 10000) in paragraph at lines 64--73
 
  []
 
-
-Underfull \vbox (badness 1107) has occurred while \output is active []
-
- [4 <./resources/distribution.png>]) (results.tex) (conclusions.tex
+[4 <./resources/distribution.png> <./resources/finalTrainDistribution.png>])
+(results.tex) (conclusions.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
@@ -904,13 +899,13 @@ Before submitting the final camera ready copy, remember to:
 
 ] (template.aux) ) 
 Here is how much of TeX's memory you used:
- 11959 strings out of 476361
- 199319 string characters out of 5788046
+ 11939 strings out of 476361
+ 199198 string characters out of 5788046
  1871993 words of memory out of 5000000
- 32100 multiletter control sequences out of 15000+600000
- 564740 words of font info for 158 fonts, out of 8000000 for 9000
+ 32083 multiletter control sequences out of 15000+600000
+ 564426 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,10n,122p,1360b,347s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 65i,10n,122p,1360b,353s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/harjo/AppData/Local/Programs/MiKT
@@ -928,9 +923,9 @@ pe1/urw/times/utmb8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/urw/times/utmbi8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/urw/times/utmr8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on template.pdf (6 pages, 245782 bytes).
+Output written on template.pdf (6 pages, 449590 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 102 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

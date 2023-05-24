@@ -21,7 +21,8 @@
 
 \section{Dataset}
 \label{sec:dataset}
-In this section, we start by introducing the dataset used for our experiments, then explain how we processed it to use with our model, and finally how we made it an i.i.d. dataset.\\\\
+In this section, we start by introducing the dataset used for our experiments, then explain how we processed it to use with our model, and finally how we made it an i.i.d. dataset.
+\ \\\\% INPUT DATA
 \textbf{1) Input data} 
 
 The dataset we used for the training and evaluation is ModelNet10 from https://modelnet.cs.princeton.edu/. 
@@ -29,39 +30,52 @@ The dataset we used for the training and evaluation is ModelNet10 from https://m
 It contains 4899 3D objects divided into 10 different categories and has an initial splitting of the data into 80\% for training and 20\% for testing.\\
 \begin{figure}[]
 	\centering
-	\caption{Initial Train Set Distribution [TODO with ordby name]}
 	\includegraphics[scale = 0.45]{resources/distribution.png}
+	\caption{Initial Train Set Distribution [TODO with ordby name]}
 	\label{fig:initialTrainSetDistribution}
 \end{figure}
 In Figure \ref{fig:initialTrainSetDistribution} we can see the initial distribution of the training samples.
-\   \\\\
-\textbf{2) Pre-processing} 
+\   \\\\ % PRE-PROCESSING DATA
+\textbf{2) Pre-processing data} 
 
-The CAD models are in Object File Format (OFF), but our model, described in the session V. LEARNING FRAMEWORK, requires 3D boolean vectors with dimensions of \mbox{$32\times32\times32$}.
+The CAD models, or Meshes, are in Object File Format (OFF), but our model, described in the section \ref{sec:learning_framework}, requires 3D boolean vectors with dimensions of \mbox{$32\times32\times32$}.
 
 In order to get the required input format, we have done the following steps:
 \begin{itemize}
-	\item With the help of the Open3d Python library, we converted each model in the dataset to voxel grids, 2D list of filled positions. As mentioned before, this saves space and in our case, we went from 2.17 GB to 311 MB. [ code with parameters of sample rates…]
-	\item Finally, we translated each voxel grid to the actual \mbox{$32\times32\times32$} boolean array. The code is available in our Git repository. [...with np and o3d]
+	\item With the help of the Open3d Python library, we converted each model in the dataset to voxel grids, 2D list of filled positions. After this step, each Mesh was converted into a voxelgrid of size \mbox{$32\times32\times32$}.\\
+	 As mentioned, voxel grids are good for saving space and in our case, we went from 2.17 GB to 311 MB. 
+	\item Next, we translated each voxel grid to a  \mbox{$32\times32\times32$} boolean array, thus making it ready as input for the model. The code is available in our Git repository under the folder:  \mbox{\textit{code/preprocessing/voxelization/}}.
 \end{itemize}
 
 As we can see from Figure \ref{fig:initialTrainSetDistribution}, the ModelNet10 is not an Independent and Identically Distributed (i.i.d.) dataset. The assumption of I.I.D is central to almost all machine learning algorithms, and we tried to make our data as much as i.i.d in the following way:
 \begin{itemize}
-	\item Firstly, we normalized the data, from the previous step, by subtracting the mean and dividing by the standard deviation;
-	\item Then, we augmented all the voxel grids with new rotations [TODO: add how] to increase the samples in the dataset;
-	\item Finally, we randomly picked ~1k samples per category.
+	\item Firstly, we normalized the data, from the previous step, by subtracting the mean and dividing by the standard deviation. [TODO: remove?]
+	\begin{center}
+		\textit{
+			normalized\_voxelgrid = (voxelgrid - mean) / std
+		}
+	\end{center}
+	
+	\item Then, we augmented the dataset with new rotations of the voxel grids. Rotations are made by adding multiples of 30 degrees to the initial orientation. [TODO with formulas?]
+	
+	\item Finally, we randomly picked, per category, $\sim$1k samples for the train set and $\sim$300 samples for the test set. [TODO we are not precise here]
+	
 \end{itemize}
 Figure \ref{fig:finalTrainSetDistribution} shows the distribution we get after these steps.
 \begin{figure}[]
 	\centering
-	\caption{Final Train Set Distribution [TODO correctone]}
-	\includegraphics[scale = 0.45]{resources/distribution.png}
+	\includegraphics[scale = 0.45]{resources/finalTrainDistribution.png}
+	\caption{Final Train Set Distribution [TODO with ordby name]}
 	\label{fig:finalTrainSetDistribution}
 \end{figure}
-\  \\\\
-\textbf{3) Training Setup[RENAME]}
+\   \\\\ % PARTITIONING DATA
+\textbf{3) Partitioning data}
 
-\MR{TODO: Last but not least, this section should also contain information on how you have split the dataset into training, validation and test sets. This will be briefly recalled within the ``Results'' section.}
+A good practice is to divide the dataset into three sets: one set for training and two smaller sets for validation and testing.
+The ratio we used for splitting is 80/10/10, where 80 percent of the data is put into the training set, and the remaining percentage is equally spread across the test and validation sets.
+
+
+\MR{This will be briefly recalled within the ``Results'' section.}
 
 \section{Learning Framework}
 \label{sec:learning_framework}
