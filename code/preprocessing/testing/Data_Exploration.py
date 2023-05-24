@@ -1,6 +1,16 @@
-import open3d as o3d
-from HelperClass import HelperClass as Helper
+import sys
 import os
+from pathlib import Path
+
+# TO ADD preprocessing as module
+path = Path(__file__)
+while (path.stem != "code"):
+    path = path.parent
+sys.path.append(os.fspath(path.absolute()))
+
+from preprocessing.HelperClass import HelperClass as Helper
+
+import open3d as o3d
 
 print(o3d.__version__)
 # Open a file
@@ -23,8 +33,7 @@ TEST_SET = True
 
 def forEach(doThis):
     # dooing for all the models
-    baseDIR = os.path.dirname(__file__)
-    rootModelsDirName = os.path.join(baseDIR, outputFolderName)
+    rootModelsDirName = os.path.join(Helper.getOutputDir(), outputFolderName)
 
     models = ["bathtub", "bed", "chair", "desk", "dresser",
               "monitor", "night_stand", "sofa", "table", "toilet"]
@@ -60,10 +69,10 @@ def forEach(doThis):
         print(f'{modelFolder}/{"test" if isTestModel else "train"} has {len(inputModels)} models')
 
         # 3) for each doThis
-        # for path in inputModels:
-        #     filename = Helper.getFullPathForModel(
-        #         path, isTestModel, outputFolderName, isMesh=False, hasRotaions=True)
-        #     #print(path)  # ,filename
-        #     doThis(Helper.importVoxelGrid(filename).get_voxels(), VOXEL_GRID_SIZE)
+        for path in inputModels:
+            filename = Helper.getFullPathForModel(
+                path, isTestModel, outputFolderName, isMesh=False, hasRotaions=True)
+            #print(path)  # ,filename
+            doThis(Helper.importVoxelGrid(filename).get_voxels(), VOXEL_GRID_SIZE)
 
 forEach(Helper.describeVoxels)

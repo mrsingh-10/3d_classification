@@ -1,6 +1,16 @@
 import numpy as np
-from random import sample
-from HelperClass import HelperClass as Helper
+import sys
+import os
+from pathlib import Path
+
+# TO ADD preprocessing as module
+path = Path(__file__)
+while (path.stem != "code"):
+    path = path.parent
+sys.path.append(os.fspath(path.absolute()))
+
+from preprocessing.HelperClass import HelperClass as Helper
+
 
 # DEMO CALLS
 # model = "toilet_0052"

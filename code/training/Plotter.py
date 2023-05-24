@@ -1,23 +1,30 @@
 import matplotlib.pyplot as plt
 import re
+from pathlib import Path
 
 PRINT = False
 OVERFITTING = False
 
-path = "./../models/orion_ext/trainingOnly_adam_epoc3k.txt"
-path = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-02_stuck.txt"
-path = "./TrainingOutput/vgnet_v3_adam_1e-03.txt"
+path = Path(__file__)
+while (path.stem != "code"):
+    path = path.parent
+OUTPUT_DIR = path.joinpath("output/training/")
+if PRINT: print("OUTPUT_DIR:", OUTPUT_DIR)
+
+path = OUTPUT_DIR / "Overfitting/vgnet_v3_adam_1e-02_stuck.txt"
+path = OUTPUT_DIR / "vgnet_v3_adam_1e-03.txt"
+# path = OUTPUT_DIR / "old/orion_ext/trainingOnly_adam_epoc3k.txt"
 
 # Val Loss goal [ORION_3k]: 0.2861 
 paths = [path]
 if OVERFITTING:
     overFittingEpocs = [400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000]
     epocs = overFittingEpocs
-    paths.extend([f"./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
+    paths.extend([OUTPUT_DIR / f"Overfitting/vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
 else:
-    trainingEpocs = [100,200]
+    trainingEpocs = [100,200,300]
     epocs = trainingEpocs
-    paths.extend([f"./TrainingOutput/vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
+    paths.extend([OUTPUT_DIR / f"vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
 
 # paths = [path]
 

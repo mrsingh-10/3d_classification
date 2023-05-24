@@ -1,5 +1,5 @@
 import open3d as o3d
-from HelperClass import HelperClass as Helper
+from preprocessing.HelperClass import HelperClass as Helper
 import os
 from random import sample
 

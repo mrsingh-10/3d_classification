@@ -1,4 +1,14 @@
-from HelperClass import HelperClass as Helper
+import sys
+import os
+from pathlib import Path
+
+# TO ADD preprocessing as module
+path = Path(__file__)
+while (path.stem != "code"):
+    path = path.parent
+sys.path.append(os.fspath(path.absolute()))
+
+from preprocessing.HelperClass import HelperClass as Helper
 
 import copy
 import numpy as np
@@ -35,7 +45,7 @@ l = ["chair_0900", "chair_0902", "chair_0944", "chair_0952", "chair_0954",
 l = ["monitor_0470", "monitor_0471", "monitor_0502", "monitor_0472",
      "monitor_0469", "monitor_0508", "monitor_0506", "monitor_0522", "monitor_0512",
      "monitor_0510"]
-l = [ "dresser_0"+str(i) for i in range(205,207)]
+#l = [ "dresser_0"+str(i) for i in range(205,207)]
 
 m = []
 # Importing mesh

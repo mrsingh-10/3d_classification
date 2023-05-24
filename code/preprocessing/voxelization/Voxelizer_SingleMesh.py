@@ -1,4 +1,14 @@
-from HelperClass import HelperClass as Helper
+import sys
+import os
+from pathlib import Path
+
+# TO ADD preprocessing as module
+path = Path(__file__)
+while (path.stem != "code"):
+    path = path.parent
+sys.path.append(os.fspath(path.absolute()))
+
+from preprocessing.HelperClass import HelperClass as Helper
 
 # DEMO CALLS
 VOXEL_GRID_SIZE = 32

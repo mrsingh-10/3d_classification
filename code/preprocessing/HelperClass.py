@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import open3d as o3d
+from pathlib import Path
 
 # TODO: Bring folder creation inside the helper
 
@@ -108,16 +109,32 @@ class HelperClass:
         return cls.getVoxelGridFromArray(R.dot(grid_index_array.T).T, voxelGridSize)
         
     @classmethod
-    def getFoldersFromModel(cls,model, isTestModel, outputDirName):
-        baseDIR = os.path.dirname(__file__)
+    def getInputDir(cls):
+        path = Path(__file__)
+        while (path.stem != "code"):
+            path = path.parent
+        return os.fspath((path / "input").absolute())
+
+    @classmethod
+    def getOutputDir(cls):
+        path = Path(__file__)
+        while (path.stem != "code"):
+            path = path.parent
+        return os.fspath((path / "output/preprocessing").absolute())
+    
+    @classmethod
+    def getFoldersFromModel(cls,model, isTestModel, subFolderDirName):
+        inputDIR = cls.getInputDir()
+        outputDIR = cls.getOutputDir()
         test = isTestModel
 
         temp = model.split("_")
         temp.pop()
         modelFolder = "_".join(map(str,temp))
 
-        modelNetDIR = os.path.join(baseDIR,"ModelNet10")
-        outputDIR = os.path.join(baseDIR,outputDirName)
+        modelNetDIR = os.path.join(inputDIR,"ModelNet10")
+
+        outputDIR = os.path.join(outputDIR,subFolderDirName)
         modelFolderOutput = os.path.join(outputDIR,modelFolder)
 
         current_inputModel = os.path.join(modelNetDIR,modelFolder,"test" if test else "train",model+cls.INPUT_EXTENTION)
@@ -126,7 +143,8 @@ class HelperClass:
 
     @classmethod
     def getFullPathForModel(cls, model, isTestModel, rootModelFolder, isMesh, suffix="", hasRotaions=False):
-        baseDIR = os.path.dirname(__file__)
+        # TODO Reformat: the following line is temporary sol
+        baseDIR = cls.getInputDir() if isMesh else cls.getOutputDir()
 
         temp = model.split("_")
         temp.pop()
@@ -172,9 +190,8 @@ class HelperClass:
         print("m:",mean,"std:",std)
     
     @classmethod
-    def createOutputFoldersForModelFolder(cls,modelFolder,outputDirName):
-        baseDIR = os.path.dirname(__file__)
-        outputDIR = os.path.join(baseDIR,outputDirName)
+    def createOutputFoldersForModelFolder(cls,modelFolder,subFolderOutputDirName):
+        outputDIR = os.path.join(cls.getOutputDir(),subFolderOutputDirName)
         modelFolderOutput = os.path.join(outputDIR,modelFolder)
 
         #print(f"Creating folder {outputDIR}")
@@ -192,4 +209,5 @@ class HelperClass:
         temp.pop()
         modelFolder = "_".join(map(str,temp))
         cls.createOutputFoldersForModelFolder(modelFolder,outputDirName)
+
     

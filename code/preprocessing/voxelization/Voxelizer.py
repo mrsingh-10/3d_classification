@@ -1,8 +1,17 @@
+import sys
 import os
-import open3d as o3d
+from pathlib import Path
 import time
 from joblib import Parallel, delayed
-from HelperClass import HelperClass as Helper
+
+# TO ADD preprocessing as module
+path = Path(__file__)
+while (path.stem != "code"):
+    path = path.parent
+sys.path.append(os.fspath(path.absolute()))
+
+from preprocessing.HelperClass import HelperClass as Helper
+
 
 # PARAMETERS
 VOXEL_GRID_SIZE = 32        # L/W/H of each voxel
@@ -12,7 +21,7 @@ OUTPUT_EXTENTION = ".ply"
 def meshToVoxel(model,test):
     # IMPORT STEP
     print("Current model:", model)
-    current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel=test,outputDirName=outputDirName)
+    current_inputModel,current_outputModel = Helper.getFoldersFromModel(model,isTestModel=test,subFolderDirName=outputDirName)
     
     # Importing the mesh from the disk
     mesh = Helper.importMesh(current_inputModel) #.compute_vertex_normals()
@@ -20,9 +29,8 @@ def meshToVoxel(model,test):
     Helper.exportVoxelGrid(current_outputModel,voxelGrid)
 
 # DEMO CALLS
-baseDIR = os.path.dirname(__file__)
-modelNetDIR = os.path.join(baseDIR,"ModelNet10")
-outputDirName = "Output_v2"
+modelNetDIR = os.path.join(Helper.getInputDir(),"ModelNet10")
+outputDirName = "Test"
 
 models = ["bathtub", "bed", "chair", "desk", "dresser", "monitor", "night_stand","sofa","table", "toilet"]
 

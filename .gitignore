@@ -1,6 +1,9 @@
 *.zip
-code/ModelNet10/*
+*.ply
+*.off
+*.DS_Store
 code/.vscode/*
-code/Output*
-code/Test/*
-code/__pycache__/*
+code/**/Test/*
+code/**/__pycache__/*
+code/**/log_**.txt
+

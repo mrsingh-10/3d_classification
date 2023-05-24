@@ -1,5 +1,5 @@
 import numpy as np
-from HelperClass import HelperClass as Helper
+from preprocessing.HelperClass import HelperClass as Helper
 from random import sample
 import time
 from joblib import Parallel, delayed
@@ -19,7 +19,7 @@ def arrayOf(voxelGrid):
 #Helper.show(voxelGrid)
 
 
-# main code:
+# main code: FROM VG TO ROTATED
 randomsGlobal = [0 for _ in range (0,12) ]
 sectors = [i for i in range (0,12) ]
 print(sectors)
