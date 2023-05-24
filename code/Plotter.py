@@ -2,30 +2,26 @@ import matplotlib.pyplot as plt
 import re
 
 PRINT = False
+OVERFITTING = False
 
-path = "C:\\Users\\harjo\\Workspace\\UniPD\\repo\\3d_classification\\models\\orion_ext\\trainingOnly_adam_epoc3k.txt"
+path = "./../models/orion_ext/trainingOnly_adam_epoc3k.txt"
 path = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-02_stuck.txt"
 path = "./TrainingOutput/vgnet_v3_adam_1e-03.txt"
 
-path100 = "./TrainingOutput/vgnet_v3_adam_1e-03_100.txt"
-# path400 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_400.txt"
-# path600 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_600.txt"
-# path800 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_800.txt"
-# path1000 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_1000.txt"
-# path1200 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_1200.txt"
-# path1400 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_1400.txt"
-# path1600 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_1600.txt"
-# path1800 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_1800.txt"
-# path2000 = "./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_2000.txt"
-
 # Val Loss goal [ORION_3k]: 0.2861 
-# paths = [path400, path600, path800, path1000, path1200, path1400, path1600, path1800, path2000, path]
-paths = [path, path100]
+paths = [path]
+if OVERFITTING:
+    overFittingEpocs = [400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000]
+    epocs = overFittingEpocs
+    paths.extend([f"./TrainingOutput/Overfitting/vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
+else:
+    trainingEpocs = [100,200]
+    epocs = trainingEpocs
+    paths.extend([f"./TrainingOutput/vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
+
 # paths = [path]
 
-# 36min (20epoche) * 5 = 3ore * 100epoche
 totEpochs = 0
-
 
 def generateDictsFromFile(log_fh, etimatedTotEpochs):
     currentDict = [{} for _ in range(etimatedTotEpochs+1)]
