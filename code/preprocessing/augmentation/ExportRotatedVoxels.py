@@ -1,9 +1,20 @@
-import numpy as np
+# TO ADD preprocessing as module
+import sys
+import os
+from pathlib import Path
+
+path = Path(__file__)
+while (path.stem != "code"):
+    path = path.parent
+sys.path.append(os.fspath(path.absolute()))
+
 from preprocessing.HelperClass import HelperClass as Helper
+# TO ADD preprocessing as module
+
+import numpy as np
 from random import sample
 import time
 from joblib import Parallel, delayed
-import os
 
 # PARAMETERS
 VOXEL_GRID_SIZE = 32        # L/W/H of each voxel
@@ -46,8 +57,7 @@ models = ["bathtub", "bed", "chair", "desk", "dresser", "monitor", "night_stand"
 #for modelFolder in models:
 #    test = False
 
-baseDIR = os.path.dirname(__file__)
-inputDirName = os.path.join(baseDIR,"Output_v3")
+inputDirName = os.path.join(Helper.getOutputDir(),"Output_v3")
 INPUT_EXTENTION = ".ply"
 OUTPUT_EXTENTION = ".ply"
 

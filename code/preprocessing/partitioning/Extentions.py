@@ -1,6 +1,17 @@
-import open3d as o3d
-from preprocessing.HelperClass import HelperClass as Helper
+# TO ADD preprocessing as module
+import sys
 import os
+from pathlib import Path
+
+path = Path(__file__)
+while (path.stem != "code"):
+    path = path.parent
+sys.path.append(os.fspath(path.absolute()))
+
+from preprocessing.HelperClass import HelperClass as Helper
+# TO ADD preprocessing as module
+
+import open3d as o3d
 from random import sample
 
 print(o3d.__version__)
@@ -13,8 +24,7 @@ outputFolderName = "Output_ROTATED_v4"
 
 def getKPartitionsGathered(folderName, K=5):
     # dooing for all the models
-    baseDIR = os.path.dirname(__file__)
-    rootModelsDirName = os.path.join(baseDIR, folderName)
+    rootModelsDirName = os.path.join(Helper.getOutputDir(), folderName)
 
     models = ["bathtub", "bed", "chair", "desk", "dresser",
               "monitor", "night_stand", "sofa", "table", "toilet"]
@@ -69,8 +79,7 @@ def getKPartitionsGathered(folderName, K=5):
 
 def getKPartitionsFolderized(folderName, K, folderTest):
     # dooing for all the models
-    baseDIR = os.path.dirname(__file__)
-    rootModelsDirName = os.path.join(baseDIR, folderName)
+    rootModelsDirName = os.path.join(Helper.getOutputDir(), folderName)
 
     models = ["bathtub", "bed", "chair", "desk", "dresser",
               "monitor", "night_stand", "sofa", "table", "toilet"]

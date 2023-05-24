@@ -1,15 +1,17 @@
-import numpy as np
+# TO ADD preprocessing as module
 import sys
 import os
 from pathlib import Path
 
-# TO ADD preprocessing as module
 path = Path(__file__)
 while (path.stem != "code"):
     path = path.parent
 sys.path.append(os.fspath(path.absolute()))
 
 from preprocessing.HelperClass import HelperClass as Helper
+# TO ADD preprocessing as module
+
+import numpy as np
 
 
 # DEMO CALLS

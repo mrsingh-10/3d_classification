@@ -1,10 +1,20 @@
+# TO ADD preprocessing as module
+import sys
 import os
-import time
-from random import shuffle
+from pathlib import Path
 
-import numpy as np
+path = Path(__file__)
+while (path.stem != "code"):
+    path = path.parent
+sys.path.append(os.fspath(path.absolute()))
 
 from preprocessing.HelperClass import HelperClass as Helper
+# TO ADD preprocessing as module
+
+import time
+from random import shuffle
+import numpy as np
+
 
 # PARAMETERS
 VOXEL_GRID_SIZE = 32        # L/W/H of each voxel
@@ -13,17 +23,16 @@ VOXEL_GRID_SIZE = 32        # L/W/H of each voxel
 # folders&files setting
 INPUT_EXTENTION = ".ply"
 OUTPUT_EXTENTION = ".ply"
-baseDIR = os.path.dirname(__file__)
-inputDirPath = os.path.join(baseDIR, "Output_v3")
 
 inputDirName = "Output_v3"
+inputDirPath = os.path.join(Helper.getOutputDir(), inputDirName)
+
 outputDirName = "Output_subset_v1"
 
 # which set to export
 TRAIN_SET = False
 TEST_SET = True
 TOT_SAMPLES = 20
-
 
 # which categories to export
 models = ["bathtub", 
