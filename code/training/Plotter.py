@@ -22,7 +22,7 @@ if OVERFITTING:
     epocs = overFittingEpocs
     paths.extend([OUTPUT_DIR / f"Overfitting/vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
 else:
-    trainingEpocs = [100,200,300, 400, 500]
+    trainingEpocs = [100,200,300, 400, 500, 600, 700]
     epocs = trainingEpocs
     paths.extend([OUTPUT_DIR / f"vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
 
@@ -151,6 +151,7 @@ def plot(listNew):
     fig.canvas.mpl_connect("motion_notify_event", hover)
 
     plt.legend(loc='upper right')
+    plt.legend(loc='lower left')
 
     # VALIDATION 
     ax2 = plt.subplot(3, 1, 3)
