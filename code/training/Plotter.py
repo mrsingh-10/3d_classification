@@ -22,11 +22,11 @@ if OVERFITTING:
     epocs = overFittingEpocs
     paths.extend([OUTPUT_DIR / f"Overfitting/vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
 else:
-    trainingEpocs = [100,200,300, 400, 500, 600, 700]
+    trainingEpocs = [100,200,300, 400, 500, 600, 700,1100, 1200]
     epocs = trainingEpocs
     paths.extend([OUTPUT_DIR / f"vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
 
-# paths = [path]
+#paths = [path]
 
 totEpochs = 0
 
