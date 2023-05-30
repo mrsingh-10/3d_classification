@@ -28,6 +28,7 @@ else:
 
 paths = [path]
 
+
 totEpochs = 0
 
 def generateDictsFromFile(log_fh, etimatedTotEpochs):
