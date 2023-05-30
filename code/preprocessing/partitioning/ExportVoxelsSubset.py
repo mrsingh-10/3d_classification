@@ -41,9 +41,10 @@ models = ["bathtub",
 def arrayOf(voxelGrid):
     return np.array(list(map(lambda x: x.grid_index, voxelGrid.get_voxels())))
 
+
 def export(model, isTestModel):
     # IMPORT STEP
-    print("Current model:", model)
+    print("Copying Current model:", model)
     importFileName = Helper.getFullPathForModel(model, isTestModel, inputDirName, isMesh=False)
     exportFileName = Helper.getFullPathForModel(model, isTestModel, outputDirName, isMesh=False) #os.path.dirname()
     print("IN:",importFileName,"\nOUT:",exportFileName)
@@ -51,7 +52,7 @@ def export(model, isTestModel):
 
 
 total = time.time()
-def getSubset(folders, subsetSize = TOT_SAMPLES):
+def eportSubset(folders, subsetSize = TOT_SAMPLES):
     for modelFolder, test in ((x, y) for x in folders for y in (True, False)):
         # TODO change this is temporary solution
         if (not TEST_SET) and test: 
@@ -95,4 +96,5 @@ def getSubset(folders, subsetSize = TOT_SAMPLES):
         print("Time:", time.time() - t)
     print("Total Time:", time.time() - total)
 
-getSubset(models)
+eportSubset(models)
+print()

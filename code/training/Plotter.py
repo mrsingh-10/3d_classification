@@ -26,7 +26,7 @@ else:
     epocs = trainingEpocs
     paths.extend([OUTPUT_DIR / f"vgnet_v3_adam_1e-03_{epoc}.txt" for epoc in epocs])
 
-#paths = [path]
+paths = [path]
 
 totEpochs = 0
 
