@@ -29,7 +29,6 @@ def importMesh(path):
     # mesh.compute_vertex_normals()
     return mesh
 
-
 def process(mesh, i):
     m = copy.deepcopy(mesh)
     R = m.get_rotation_matrix_from_xyz((0, 0, 5*np.pi / 8))
@@ -47,14 +46,23 @@ l = ["monitor_0470", "monitor_0471", "monitor_0502", "monitor_0472",
      "monitor_0510"]
 #l = [ "dresser_0"+str(i) for i in range(205,207)]
 
+
+l = ["chair_0900", "chair_0902", "chair_0944", "chair_0952", "chair_0954",
+     "chair_0980", "chair_0983", "chair_0986", "chair_0987", "chair_0989"]
+
 m = []
+v = []
 # Importing mesh
-for i, path in enumerate(l):
+i = 9
+for i, path in enumerate(l[i:i+1]):
     isTestModel = True
     filename = Helper.getFullPathForModel(
         path, isTestModel, "ModelNet10", isMesh=True, hasRotaions=False)
-    m.append(process(importMesh(filename), i))
+    mesh = importMesh(filename)
+    m.append(process(mesh, i))
+    v.append(Helper.getVoxelGridFromMesh(mesh))
     print(i, path)
 
 # Showing mesh with BBs
-Helper.showComposed(m)
+Helper.showComposed(v)
+
