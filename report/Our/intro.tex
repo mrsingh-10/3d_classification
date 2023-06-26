@@ -3,42 +3,21 @@
 \section{Introduction}
 \label{sec:introduction}
 
-\begin{remark}
-\textbf{Paper contribution:} First and foremost decide on what precisely is the contribution of your paper over the state of the art. If you think you have several contributions, {\it focus on the most important one}. It may be that you can add one or two contributions as side topics, but in general you should focus on the most important one so as {\it to keep your paper focused}. As a side note: If you think you have several contributions for a single paper, you should probably invest in researching state of the art and related work more thoroughly. When you know your contribution, think of a good title.
-\end{remark}
-
-\begin{remark} 
-\textbf{Title:} Find a short and precise title for you paper exactly matching the content. It's worth investing time into this matter, as {\it the title will be that part of the paper by which it will be referenced} (in case it gets published).
-\end{remark}
-
-\begin{remark}
-\textbf{How to organize your writeup with Latex:} I find it useful, especially for a paper with multiple authors, to split your manuscript into multiple source Latex files. This is very easily accomplished by having single {\it root} file, e.g., \texttt{main.tex}, where you define the article class, all the \mbox{user-defined} commands, the paper formatting options (e.g., one vs two columns, the page margins, the text size and the fonts, etc.). For this project, the root is called \texttt{template.tex}. From the root you then call, in sequential order, a number of other latex source files through the command \texttt{\textbackslash input\{filename.tex\}}. It is often convenient to have one of such files for each section of your paper. This facilitates editing multiple sections in parallel and keeping your project synchronized with some versioning and revision control system such as  or \texttt{git} or \texttt{overleaf} (highly recommended).
-\end{remark}
-
-\begin{remark}
-\textbf{Compiling trick:} For each source Latex file that you call from the main, I recommend you copy the following command in the very first line\\
-\texttt{\% !TEX root = template.tex}\\
-where \texttt{template.tex} is the name of the root Latex file. This command tells the Latex compiler that your main root file is \texttt{template.tex}, and it makes it possible to compile the paper from any of the sub-files. Example: imagine you are editing \texttt{introduction.tex} and have that open in a window of your preferred Latex editor. With this command, you can compile from the local \texttt{introduction.tex} window, without having to open and switch every time to the root file window and compile from it. This will save you hours.  
-\end{remark}
-
-\red{Maximum length for the whole report is 10 pages. Abstract, introduction and related work should take max two pages.}\\
-
-\noindent \textbf{Recommended structure for the intro:} you may use the following structure. 
+The 3D Object recognition task contributes to the field of computer vision by enabling the detection, classification and also localization of three-dimensional objects in images or video streams. Thanks to the improvements in Computer Vision and Deep Learning technologies these tasks are more and more reliable and accessible, enabling many emerging applications like augmented reality, virtual reality and many more related to robotics interactions with the environment. 
+The way 3D data is represented has a significant impact on the performance of the 3D object detection. Here we introduce two of the most common representation for 3D Objects.
 \begin{itemize}
-\item \textbf{General (short) intro:} One paragraph to introduce your work, describing the scenario {\it at large}, its relevance, to prepare the reader to what follows and convince her/him that the paper focuses on an important setup/problem. Please keep this part short (I usually do five to eight lines), as this part is rather standard, \textbf{but} at the same time it has to be there. 
-\item \textbf{Put the problem into perspective:} A second paragraph where you immediately delve into the specific problem that you are tackling, starting to detail your contribution. Here, you describe the importance of such problem, providing examples (citing papers from the literature, possibly recent ones) of previous solutions attempts, and of why these failed {\it to provide a complete answer}. This second paragraph should not be too long, as otherwise the reader will get bored and will abandon your paper... It should be concisely written, something like 5 to 10 lines.
-\item \textbf{Present the paper contribution:} A third paragraph were you state what you do in the paper, this should also be concisely written. A good rule of thumb is to make it max 10/15 lines. Here, you should state up front:
-\begin{enumerate}
-\item \textbf{problem}: the problem at stake, 
-\item \textbf{relevance}: the relevance and timeliness of what you propose, 
-\item \textbf{approach}: the technique/approach you use, possibly underlying its novelty, efficiency, 
-\item \textbf{value}: underline the value/novelty of your proposal referencing (recent) papers from the literature,
-\item \textbf{applicability}: tell the reader how she/he can take advantage of your work, e.g., how your work/results can be reused/exploited to achieve further scientific, technical or practical (integrated into products?) goals.
-\end{enumerate}
-\item \textbf{Summary of contributions:} After this, you may want to provide an itemized list to summarize the paper contributions. Rule of thumb: from three to six items, from three to four lines each.
-\item \textbf{Closing (paper structure):} You finish up by detailing the paper structure, this should be three to four lines. It is customary to do so, although I admit it may be of little use. It usually goes like: {\it ``This report (paper) is structured as follows. In Section II we describe the state of the art, the system and data models are respectively presented in Sections~III and~IV. The proposed signal processing technique is detailed in Section~V and its performance evaluation is carried out in Section~VI. Concluding remarks are provided in Section~VII.''}
+    \item The Point-based representation uses a set of 3D points to describe the geometry of an object. This representation is lightweight and can handle large point clouds efficiently. The structure can  retain precise point positions, but at the same time it has a limited feature representation and since the points are unordered using them requires a high computational capacity \cite{liu2019pointvoxel}.
+
+    \item Voxel-based representation models the object as a 3D grid of voxels, where each voxel has a binary value to indicate whether the object occupies it or not. This representation provides detailed information about the shape and structure of objects, but it requires a lot of memory, since we have to store also the empty blocks, therefore they are not scalable as other approaches \cite{liu2019pointvoxel}.
 \end{itemize}
 
-\begin{remark} 
-Lately, I tend to write introduction plus abstract within a single page. This forces me to focus on the important messages that I want to deliver about the paper, leaving out all the ``blah blah''. \textbf{Remember:} 1) {\it less is more}, 2) writing a compact ({\it snappy}) piece of technical text is much more difficult than writing lengthy stuff with no space constraints.
-\end{remark}
+In this paper, we propose a "label predictor" that relies on 5 models using an ensembling technique to classify 3D objects, using at the same time a coarse voxel granularity. 
+As mentioned above, the Voxel Grid structure maintains information regarding the shape and structure of the 3D Object, in order to properly capture and maximize the spatial relationship provided by the Voxel-Grid structure, we decided to use \ac{CNN}s as core networks. 
+
+The main advantages of using this kind of approach is that each weak model is trained on a portion of the dataset, requiring smaller and thus quicker models. Since the weak models are trained on different portion of the dataset, they learn and make prediction based on different features, increasing the generalization of our ensemble system. If one can run all 5 weak models in parallel, and then choose the final label, this may result faster than running a single bigger model.
+
+The memory requirements for voxelized 3D objects increase cubically with the resolution. We have seen that, for a resolution of 16, where each object is divided in a 16x16x16 voxel grid, the visualization is too coarse to be used. On the other hand, a resolution of 64 requires 262.400 blocks for each object, which is too much considering our memory capacity. In the end, we went with the resolution of 32x32x32, which has an affordable amount of blocks per objects ($\sim$32.000) \cite{liu2019pointvoxel}. In our case, this resolution is the optimal trade-off between memory and information loss. The expectation is that using a restrained number of blocks for each Object, the model will be more efficient by taking less time to execute and requiring less memory to storage all the Voxels information. 
+
+The dataset which we used for training our models is a modified version of the ModelNet10 \cite{7298801}. The initial dataset is composed by 4899 aligned 3D CAD model divided in 10 different classes, we perform data augmentation to create a portion of rotated entries, which is useful to make our models learn how to classify objects independently of their rotation in the Z axis. 
+
+The rest of the paper is organized as follows: Section \ref{sec:related_work} provides an overview of related works; Section \ref{sec:pipeline} describes our approach; In Section \ref{sec:dataset} we describe in details the dataset and pre-processing techniques; In Section \ref{sec:learning_framework} we present the Convolutional Neural Network that we built, summarizing the parameters we choose; In Section \ref{sec:results} we discussed our main findings; finally, Section \ref{sec:conclusions} draws some conclusions and outlooks for future works.\\

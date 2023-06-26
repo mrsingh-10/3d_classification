@@ -11,9 +11,9 @@ while (path.stem != "code"):
 OUTPUT_DIR = path.joinpath("output/training/")
 if PRINT: print("OUTPUT_DIR:", OUTPUT_DIR)
 
-path = OUTPUT_DIR / "Overfitting/vgnet_v3_adam_1e-02_stuck.txt"
-path = OUTPUT_DIR / "vgnet_v3_adam_1e-03.txt"
-# path = OUTPUT_DIR / "old/orion_ext/trainingOnly_adam_epoc3k.txt"
+path = OUTPUT_DIR / "old/Overfitting/vgnet_v3_adam_1e-02_stuck.txt"
+#path = OUTPUT_DIR / "vgnet_v3_adam_1e-03.txt"
+path = OUTPUT_DIR / "old/orion_ext/trainingOnly_adam_epoc3k.txt"
 
 # Val Loss goal [ORION_3k]: 0.2861 
 paths = [path]
@@ -152,7 +152,7 @@ def plot(listNew):
     fig.canvas.mpl_connect("motion_notify_event", hover)
 
     plt.legend(loc='upper right')
-    plt.legend(loc='lower left')
+    #plt.legend(loc='lower left')
 
     # VALIDATION 
     ax2 = plt.subplot(3, 1, 3)

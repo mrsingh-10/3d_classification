@@ -11,7 +11,7 @@ sys.path.append(os.fspath(path.absolute()))
 from preprocessing.HelperClass import HelperClass as Helper
 
 # DEMO CALLS
-VOXEL_GRID_SIZE = 32
+VOXEL_GRID_SIZE = 64
 PADDING = 0 # PADDING is added twice to the right
 
 outputDirName = "Test"
@@ -36,7 +36,7 @@ Helper.show(voxelGrid)
 
 # EXPORTING
 Helper.createOutputFoldersForModel(model,outputDirName)
-Helper.exportVoxelGrid(current_outputModel,voxelGrid)
+#Helper.exportVoxelGrid(current_outputModel,voxelGrid)
 
 ## Import voxelgrid
-Helper.show(Helper.importVoxelGrid(current_outputModel))
+#Helper.show(Helper.importVoxelGrid(current_outputModel))

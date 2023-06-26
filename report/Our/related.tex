@@ -3,50 +3,14 @@
 \section{Related Work}
 \label{sec:related_work}
 
-\noindent \textbf{Some hints:} 
-\begin{itemize}
-\item \textbf{Goal:} The goal of this section is to describe what has been done so far in {\it the} literature. You should focus on and briefly describe the work done in the best papers that you have read. 
-\item \textbf{Length:} One full column is fine but often this takes one column and a half. It is very easy to use a full page, although this may just due to your sloppiness... if you carefully go through the one page long version, you often find it possible to compact it in one column and a half. In any event, I would make this section no longer than one page, this leads to an overall {\it two pages} including abstract, introduction and related work. I believe this is a fair amount of space in most cases.
-\item \textbf{Approach:} For each you should comment on the paper's contribution, on the good and important findings of such paper and also, \textbf{1)} on why these findings are not enough and \textbf{2)} how these findings are improved upon/extended by the work that you present here. At the end of the section, you may recap the main paper contributions (maybe one or two, the most important ones) and how these extend/improve upon previous work.
-\end{itemize}
-\begin{itemize}
-\item \textbf{References:} please follow this {\it religiously}. It will help you a lot. Use the Latex \texttt{Bibtex} tool to manage the bibliography. A \texttt{Bibtex} example file, named \texttt{biblio.bib} is provided with this template.\\
+In recent times, object recognition has gained significant attention with the advancements in deep learning and computer vision technologies. These developments led to remarkable progress in the ability of computer systems to identify and recognize objects within images and videos. Many 3D Objects datasets are becoming free and accessible; Different deep learning models have been trained and tested on vast amounts of data and have exhibited good learning and generalization capabilities, surpassing the performance of traditional computer vision approaches. The generalization of the learned feature implies more capability to recognize an object even if it is rotated or is seen with a different angle, a paper that talks about this and create a model that may recognize an object regarding its orientation is "Orientation-boosted Voxel Nets for 3D Object Recognition" \cite{sedaghat2017orientationboosted}, they used pre-trained Convolutional Neural network from the VoxNet \cite{7353481} and re-trained to classify in addition also the rotations of the sample, this showed a clear improvement in the overall accuracy, going from 92\% to 93.9 on the ModelNet10 dataset.\\
 
-\item \textbf{Citing conference/workshop papers:} I recommend to always include the following information into the corresponding \texttt{bibitem} entry: 
-\begin{enumerate}
-\item author names, 
-\item paper title, 
-\item conference / workshop name, 
-\item conference / workshop address, 
-\item month, 
-\item year.
-\end{enumerate}
-Examples of this are: \cite{Zargham-2011}\cite{Sadler-2006}.\\
+In the corresponding field of 3D Object Detection, to overcome one of the challenges that may arise when using grid structures like voxels, namely capturing large context information in the structure itself.
+In general, voxel grid solutions cannot capture large context information, which may be crucial for 3D object recognition and therefore classification. For large objects or particular objects, this may result in low accuracy.
+State-of-the-art techniques in this field uses Transformer-based and Sparse CNN architectures and one of the relevant paper is Voxel Transformer for 3D Object Detection (VoTr) \cite{mao2021voxel}.
+VoTr achieves cutting edge results by implementing both local and dilated attention mechanisms to capture both short and long-range context information by combining submanifold and Sparse modules.
 
-\item \textbf{Citing journal papers:} I recommend to always include the following information into the corresponding \texttt{bibitem} entry: 
-\begin{enumerate}
- \item author names, 
- \item paper title, 
- \item full journal name, 
- \item volume (if available), 
- \item number (if available), 
- \item month, 
- \item pages (if available), 
- \item year. 
- \end{enumerate}
- Examples of this are: \cite{Shannon-1948}\cite{Boyd-2011}\cite{Zordan-2014}.\\
+These results can be replicated also in the 3D Object Classification field by integrating 3D CNN backbones like VoTr right before a Classification Network; Thinking about future works, also our model may benefit from incorporating techniques that are useful for capturing large amounts of context information as well.
 
-\item \textbf{Citing books:} I recommend to always include the following information into the corresponding \texttt{bibitem} entry: 
-\begin{enumerate}
-\item author names, 
-\item book title, 
-\item editor, 
-\item edition, 
-\item year.
-\end{enumerate}
-\end{itemize}
-%
 
-\begin{remark}
-Note that some of the above fields may not be shown when you compile the Latex file, but this depends on the bibliography settings (dictated by the specific Latex style that you load at the beginning of the document). You may decide to include additional pieces of information in a given bibliographic entry, but please, \textbf{be consistent} across all the entries, i.e., use the same fields for the same publication type. Note that some of the fields may not be available (e.g., the paper {\it volume}, {\it number} or the {\it pages}).
-\end{remark}
+Instead, with this paper, we propose different way to make the neural networks more independent and self continuous of the information on locality through Bagging and 3D cut-out techniques, and we will show an improvement on the overall accuracy on the task.

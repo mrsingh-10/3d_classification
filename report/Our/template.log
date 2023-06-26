@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.15)  24 MAY 2023 22:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.25)  26 JUN 2023 11:52
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **./template.tex
 (template.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-05-11>
+L3 programming layer <2023-05-15>
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/ieeetran\IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -424,7 +424,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@roff=\dimen263
 )) (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/breqn\breqn.sty
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2023-05-11 L3 programming layer (loader) 
+Package: expl3 2023-05-15 L3 programming layer (loader) 
 
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
@@ -598,24 +598,165 @@ sep char (CT)
 \@centerbox=\box72
 \c@ROWcellindex@=\count321
 )
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-04-22 v7.00x Hypertext links for LaTeX
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro
+.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count322
+)
+\@linkdim=\dimen288
+\Hy@linkcounter=\count323
+\Hy@pagecounter=\count324
+ (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-04-22 v7.00x Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count325
+ (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-04-22 v7.00x Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4182.
+Package hyperref Info: Link nesting OFF on input line 4187.
+Package hyperref Info: Hyper index ON on input line 4190.
+Package hyperref Info: Plain pages OFF on input line 4197.
+Package hyperref Info: Backreferencing OFF on input line 4202.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4449.
+\c@Hy@tempcnt=\count326
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip22
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4787.
+\XeTeXLinkMargin=\dimen289
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count327
+\Field@Width=\dimen290
+\Fld@charsize=\dimen291
+Package hyperref Info: Hyper figures OFF on input line 6066.
+Package hyperref Info: Link nesting OFF on input line 6071.
+Package hyperref Info: Hyper index ON on input line 6074.
+Package hyperref Info: backreferencing OFF on input line 6081.
+Package hyperref Info: Link coloring OFF on input line 6086.
+Package hyperref Info: Link coloring with OCG OFF on input line 6091.
+Package hyperref Info: PDF/A mode OFF on input line 6096.
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count328
+\c@Item=\count329
+\c@Hfootnote=\count330
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2023-04-22 v7.00x Hyperref driver for pdfTeX
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count331
+\c@bookmark@seq@number=\count332
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip75
+)
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count322
+\lst@mode=\count333
 \lst@gtempboxa=\box73
 \lst@token=\toks35
-\lst@length=\count323
-\lst@currlwidth=\dimen288
-\lst@column=\count324
-\lst@pos=\count325
-\lst@lostspace=\dimen289
-\lst@width=\dimen290
-\lst@newlines=\count326
-\lst@lineno=\count327
-\lst@maxwidth=\dimen291
+\lst@length=\count334
+\lst@currlwidth=\dimen292
+\lst@column=\count335
+\lst@pos=\count336
+\lst@lostspace=\dimen293
+\lst@width=\dimen294
+\lst@newlines=\count337
+\lst@lineno=\count338
+\lst@maxwidth=\dimen295
 
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count328
-\lst@skipnumbers=\count329
+\c@lstnumber=\count339
+\lst@skipnumbers=\count340
 \lst@framebox=\box74
 )
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
@@ -652,41 +793,45 @@ File: lstlang3.sty 2023/02/27 1.9 listings language file
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 )
-** ATTENTION: Overriding command lockouts (line 104).
-\c@remark=\count330
+** ATTENTION: Overriding command lockouts (line 108).
+\c@remark=\count341
 (template.aux)
 \openout1 = `template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
 
 -- Lines per column: 56 (exact).
 
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count331
-\scratchdimen=\dimen292
+\scratchcounter=\count342
+\scratchdimen=\dimen296
 \scratchbox=\box75
-\nofMPsegments=\count332
-\nofMParguments=\count333
+\nofMPsegments=\count343
+\nofMParguments=\count344
 \everyMPshowfont=\toks36
-\MPscratchCnt=\count334
-\MPscratchDim=\dimen293
-\MPnumerator=\count335
-\makeMPintoPDFobject=\count336
+\MPscratchCnt=\count345
+\MPscratchDim=\dimen297
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
 \everyMPtoPDFconversion=\toks37
 )
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -700,190 +845,240 @@ fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count337
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 112.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 112
+Package hyperref Info: Link coloring OFF on input line 114.
+ (template.out) (template.out)
+\@outlinefile=\write3
+\openout3 = `template.out'.
+
+\c@lstlisting=\count348
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 117.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 117
 .
- (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+
+(C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 112
+LaTeX Font Info:    Trying to load font information for U+msb on input line 117
 .
 
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
-2.
+7.
 
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-12.
+17.
 
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 1
-12.
+17.
 
 (C:\Users\harjo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 112.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
 
-Underfull \hbox (badness 1824) in paragraph at lines 114--116
-[]\OT1/ptm/b/it/9 Abstract\OT1/ptm/b/n/9 ---Future ve-hic-u-lar com-mu-ni-ca-ti
-on net-works call
+Overfull \hbox (5.16672pt too wide) in paragraph at lines 117--117
+\OT1/ptm/m/n/8 email: \OMS/cmsy/m/n/8 f\OT1/pcr/m/n/8 simone.dantimo, harjot.si
+ngh\OMS/cmsy/m/n/8 g\OT1/pcr/m/n/8 @studenti.unipd.it,
  []
 
+Package acronym Info: Label `acro:CNN' newly defined as it shall be overridden
+although it is yet undefined on input line 118.
+<resources/pipeline.png, id=39, 1136.44576pt x 413.74574pt>
+File: resources/pipeline.png Graphic file (type png)
+<use resources/pipeline.png>
+Package pdftex.def Info: resources/pipeline.png  used on input line 130.
+(pdftex.def)             Requested size: 516.0pt x 187.85687pt.
 
-Underfull \hbox (badness 2080) in paragraph at lines 114--116
-\OT1/ptm/b/n/9 spec-trum. Mo-bil-ity, in par-tic-u-lar, poses se-vere chal-leng
-es
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+(intro.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 23--137
 
  []
 
-(Intro.tex
-LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
- [1{C:/Users/harjo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/h
-arjo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-
- []
-
-) (related.tex
-Underfull \hbox (badness 2310) in paragraph at lines 13--14
-\OT1/ptm/m/n/10 the bib-li-og-ra-phy. A \OT1/pcr/m/n/10 Bibtex \OT1/ptm/m/n/10 
-ex-am-ple file, named
+(related.tex
+Underfull \hbox (badness 2573) in paragraph at lines 6--7
+\OT1/ptm/m/n/10 at-ten-tion with the ad-vance-ments in deep learn-ing and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
-
- []
-
-) (model.tex
-Underfull \hbox (badness 2521) in paragraph at lines 16--17
-[]\OT1/ptm/b/n/10 Cross ref-er-enc-ing: \OT1/ptm/m/n/10 In La-tex, cross ref-er
--enc-ing is
- []
-
-
-Underfull \hbox (badness 4792) in paragraph at lines 16--17
-\OT1/ptm/m/n/10 easy. You need to la-bel an ob-ject through the
- []
-
-
-Underfull \hbox (badness 1521) in paragraph at lines 18--19
-[]\OT1/ptm/b/n/10 But what about the tilde? \OT1/ptm/m/n/10 This is a nice tric
-k
- []
-
-
-Underfull \hbox (badness 4492) in paragraph at lines 18--19
-\OT1/ptm/m/n/10 I have learned from a friend (many years ago
- []
-
-
-Underfull \hbox (badness 5316) in paragraph at lines 18--19
-\OT1/ptm/m/n/10 from Prof. Frank Fitzek, now at TU Dres-den).
- []
-
-
-Underfull \hbox (badness 1789) in paragraph at lines 19--20
-\OT1/ptm/m/n/10 you have com-posed words, in line equa-tions, etc.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--27
-
- []
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 31.
-
-<resources/distribution.png, id=18, 513.92pt x 292.09125pt>
-File: resources/distribution.png Graphic file (type png)
-<use resources/distribution.png>
-Package pdftex.def Info: resources/distribution.png  used on input line 33.
-(pdftex.def)             Requested size: 231.26186pt x 131.43983pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--40
-
- []
-
-[3]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 65.
-
-<resources/finalTrainDistribution.png, id=23, 550.785pt x 332.442pt>
-File: resources/finalTrainDistribution.png Graphic file (type png)
-<use resources/finalTrainDistribution.png>
-Package pdftex.def Info: resources/finalTrainDistribution.png  used on input li
-ne 67.
-(pdftex.def)             Requested size: 247.85095pt x 149.5975pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--73
-
- []
-
-[4 <./resources/distribution.png> <./resources/finalTrainDistribution.png>])
-(results.tex) (conclusions.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
+[1{C:/Users/harjo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ha
+rjo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+]) (pipeline.tex
+<resources/chairs.png, id=70, 1064.17575pt x 181.27725pt>
+File: resources/chairs.png Graphic file (type png)
+<use resources/chairs.png>
+Package pdftex.def Info: resources/chairs.png  used on input line 10.
+(pdftex.def)             Requested size: 232.19843pt x 39.55196pt.
+<resources/monitor.png, id=71, 1052.733pt x 124.0635pt>
+File: resources/monitor.png Graphic file (type png)
+<use resources/monitor.png>
+Package pdftex.def Info: resources/monitor.png  used on input line 18.
+(pdftex.def)             Requested size: 232.19843pt x 27.36409pt.
+<resources/chairs_voxels.png, id=76, 414.348pt x 72.5109pt>
+File: resources/chairs_voxels.png Graphic file (type png)
+<use resources/chairs_voxels.png>
+Package pdftex.def Info: resources/chairs_voxels.png  used on input line 36.
+(pdftex.def)             Requested size: 232.19843pt x 40.63457pt.
+<resources/monitors_voxels.png, id=77, 421.0932pt x 49.6254pt>
+File: resources/monitors_voxels.png Graphic file (type png)
+<use resources/monitors_voxels.png>
+Package pdftex.def Info: resources/monitors_voxels.png  used on input line 44.
+(pdftex.def)             Requested size: 232.19843pt x 27.36522pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+Package acronym Info: Label `acro:IID' newly defined as it shall be overridden
+although it is yet undefined on input line 64.
+[2 <./resources/pipeline.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
+Underfull \hbox (badness 10000) in paragraph at lines 88--93
 
  []
 
-) (template.bbl [5])
+) (dataset.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--73
+
+ []
+
+[3 <./resources/chairs.png> <./resources/monitor.png> <./resources/chairs_voxel
+s.png> <./resources/monitors_voxels.png>]
+<resources/rotated_voxels_2.png, id=132, 204.765pt x 125.268pt>
+File: resources/rotated_voxels_2.png Graphic file (type png)
+<use resources/rotated_voxels_2.png>
+Package pdftex.def Info: resources/rotated_voxels_2.png  used on input line 83.
+
+(pdftex.def)             Requested size: 216.71906pt x 132.59038pt.
+<resources/finalTrainDistribution.png, id=137, 550.785pt x 332.442pt>
+File: resources/finalTrainDistribution.png Graphic file (type png)
+<use resources/finalTrainDistribution.png>
+Package pdftex.def Info: resources/finalTrainDistribution.png  used on input li
+ne 113.
+(pdftex.def)             Requested size: 216.71906pt x 130.80334pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (learning_framework.tex
+<resources/BlockDiagram.png.png, id=144, 524.4393pt x 101.6598pt>
+File: resources/BlockDiagram.png.png Graphic file (type png)
+<use resources/BlockDiagram.png.png>
+Package pdftex.def Info: resources/BlockDiagram.png.png  used on input line 20.
+
+(pdftex.def)             Requested size: 258.0pt x 50.01073pt.
+
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 20--21
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4 <./resources/rotated_voxels_2.png> <./resources/finalTrainDistribution.png>]
+
+Underfull \hbox (badness 4060) in paragraph at lines 82--83
+[]\OT1/ptm/m/n/10 Since the Con-vo-lu-tional back-bone main-tains the 3-
+ []
+
+) (results.tex
+<resources/training_m0.png, id=163, 356.2911pt x 304.9794pt>
+File: resources/training_m0.png Graphic file (type png)
+<use resources/training_m0.png>
+Package pdftex.def Info: resources/training_m0.png  used on input line 11.
+(pdftex.def)             Requested size: 258.0pt x 220.84612pt.
+
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 11--12
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (275.22688pt too wide) in paragraph at lines 19--34
+[]$[]$ 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5 <./resources/BlockDiagram.png.png>]
+<resources/confusion_matrix_ensemble.png, id=183, 584.6643pt x 440.1243pt>
+File: resources/confusion_matrix_ensemble.png Graphic file (type png)
+<use resources/confusion_matrix_ensemble.png>
+Package pdftex.def Info: resources/confusion_matrix_ensemble.png  used on input
+ line 84.
+(pdftex.def)             Requested size: 258.0pt x 194.2194pt.
+
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 84--85
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (conclusions.tex
+Underfull \hbox (badness 10000) in paragraph at lines 15--29
+
+ []
+
+) (acronyms.tex) (template.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./resources/training_m0.png> <./resources/confusion_matrix_ensemble.png>])
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -895,37 +1090,41 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6
+[7
 
-] (template.aux) ) 
+] (template.aux)
+Package rerunfilecheck Info: File `template.out' has not changed.
+(rerunfilecheck)             Checksum: AD9FF812CE077CBDBA7A2A14F322F03B;1034.
+ ) 
 Here is how much of TeX's memory you used:
- 11939 strings out of 476361
- 199198 string characters out of 5788046
- 1871993 words of memory out of 5000000
- 32083 multiletter control sequences out of 15000+600000
- 564426 words of font info for 157 fonts, out of 8000000 for 9000
+ 18801 strings out of 476411
+ 310930 string characters out of 5789134
+ 1881845 words of memory out of 5000000
+ 38739 multiletter control sequences out of 15000+600000
+ 561233 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,10n,122p,1360b,353s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmex10.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/harjo/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/harjo/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/harjo/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/harjo/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/
-harjo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cms
-y6.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmsy7.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type
-1/urw/courier/ucrr8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/urw/times/utmb8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/urw/times/utmbi8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/urw/times/utmr8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/urw/times/utmri8a.pfb>
-Output written on template.pdf (6 pages, 449590 bytes).
+ 75i,10n,122p,1243b,730s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmbx10.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/harjo/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/harjo/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/harjo/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/harjo/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/
+harjo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C
+:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+7.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/cou
+rier/ucrr8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/t
+imes/utmb8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/t
+imes/utmbi8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/
+times/utmr8a.pfb><C:/Users/harjo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/
+times/utmri8a.pfb>
+Output written on template.pdf (7 pages, 1705374 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 281 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 

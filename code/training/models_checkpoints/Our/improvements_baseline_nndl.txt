@@ -1,0 +1,2 @@
+version 21: baseline 			from 0 to 100 OA: 0.91
+version 22: baseline + cutout 	from 0 to 100 OA: 

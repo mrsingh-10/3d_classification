@@ -1,39 +1,105 @@
 \relax 
 \AC@reset@newl@bel
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{liu2019pointvoxel}
+\citation{liu2019pointvoxel}
+\citation{liu2019pointvoxel}
+\citation{7298801}
+\citation{sedaghat2017orientationboosted}
+\citation{7353481}
 \providecommand \oddpage@label [2]{}
-\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
-\newlabel{sec:introduction}{{I}{1}}
-\citation{Zargham-2011}
-\citation{Sadler-2006}
-\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{}\protected@file@percent }
-\newlabel{sec:related_work}{{II}{2}}
-\citation{Shannon-1948}
-\citation{Boyd-2011}
-\citation{Zordan-2014}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Processing Pipeline}{3}{}\protected@file@percent }
-\newlabel{sec:processing_architecture}{{III}{3}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Dataset}{3}{}\protected@file@percent }
-\newlabel{sec:dataset}{{IV}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Initial Train Set Distribution [TODO with ordby name]\relax }}{4}{}\protected@file@percent }
+\AC@undonewlabel{acro:CNN}
+\newlabel{acro:CNN}{{}{1}{}{section*.1}{}}
+\acronymused{CNN}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:introduction}{{I}{1}{Introduction}{section.1}{}}
+\acronymused{CNN}
+\citation{mao2021voxel}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Processing Pipeline. Starting from left, we have the voxelization of the ModelNet10 dataset, followed by data augmentation with new rotations. Next, we have the partitioning of the rotated dataset into five different subsets. The subsets are give as input to the bagging models for the training.\relax }}{2}{figure.caption.2}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:initialTrainSetDistribution}{{1}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Final Train Set Distribution [TODO with ordby name]\relax }}{4}{}\protected@file@percent }
-\newlabel{fig:finalTrainSetDistribution}{{2}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Learning Framework}{4}{}\protected@file@percent }
-\newlabel{sec:learning_framework}{{V}{4}}
-\newlabel{eq:sigmoid}{{1}{4}}
+\newlabel{fig:pipeline}{{1}{2}{Processing Pipeline. Starting from left, we have the voxelization of the ModelNet10 dataset, followed by data augmentation with new rotations. Next, we have the partitioning of the rotated dataset into five different subsets. The subsets are give as input to the bagging models for the training.\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related_work}{{II}{2}{Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Processing Pipeline}{2}{section.3}\protected@file@percent }
+\newlabel{sec:pipeline}{{III}{2}{Processing Pipeline}{section.3}{}}
+\AC@undonewlabel{acro:IID}
+\newlabel{acro:IID}{{III}{2}{Processing Pipeline}{section*.4}{}}
+\acronymused{IID}
+\citation{zhong2017random}
+\citation{devries2017improved}
+\citation{Zhou2018}
+\newlabel{fig:chairs}{{2.a.I}{3}{Chairs\relax }{figure.caption.3}{}}
+\newlabel{sub@fig:chairs}{{a.I}{3}{Chairs\relax }{figure.caption.3}{}}
+\newlabel{fig:monitors}{{2.a.II}{3}{Monitors\relax }{figure.caption.3}{}}
+\newlabel{sub@fig:monitors}{{a.II}{3}{Monitors\relax }{figure.caption.3}{}}
+\newlabel{fig:CADModels}{{2.a}{3}{Example of (\ref {fig:chairs}) Chairs and (\ref {fig:monitors}) Monitors samples from \mbox {ModelNet10} dataset.\relax }{figure.caption.3}{}}
+\newlabel{sub@fig:CADModels}{{a}{3}{Example of (\ref {fig:chairs}) Chairs and (\ref {fig:monitors}) Monitors samples from \mbox {ModelNet10} dataset.\relax }{figure.caption.3}{}}
+\newlabel{fig:chairsVoxels}{{2.b.I}{3}{Chairs\relax }{figure.caption.3}{}}
+\newlabel{sub@fig:chairsVoxels}{{b.I}{3}{Chairs\relax }{figure.caption.3}{}}
+\newlabel{fig:monitorsVoxels}{{2.b.II}{3}{Monitors\relax }{figure.caption.3}{}}
+\newlabel{sub@fig:monitorsVoxels}{{b.II}{3}{Monitors\relax }{figure.caption.3}{}}
+\newlabel{fig:VoxelizedModels}{{2.b}{3}{Example of voxelized (\ref {fig:chairsVoxels}) Chairs and (\ref {fig:monitorsVoxels}) Monitors samples of Figure \ref {fig:CADModels}\relax }{figure.caption.3}{}}
+\newlabel{sub@fig:VoxelizedModels}{{b}{3}{Example of voxelized (\ref {fig:chairsVoxels}) Chairs and (\ref {fig:monitorsVoxels}) Monitors samples of Figure \ref {fig:CADModels}\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.}{\ignorespaces Examples of Chairs and Monitors samples. Fig.\nobreakspace  {}\ref {fig:CADModels} shows the original CAD models, and Fig.\nobreakspace  {}\ref {fig:VoxelizedModels} the voxelized versions of them.\relax }}{3}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:samples}{{2.}{3}{Examples of Chairs and Monitors samples. Fig.~\ref {fig:CADModels} shows the original CAD models, and Fig.~\ref {fig:VoxelizedModels} the voxelized versions of them.\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Dataset}{3}{section.4}\protected@file@percent }
+\newlabel{sec:dataset}{{IV}{3}{Dataset}{section.4}{}}
+\acronymused{IID}
+\acronymused{IID}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Example of possible rotation of the first Chairs in Figure \ref {fig:chairsVoxels}\relax }}{4}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:rotatedChair}{{3}{4}{Example of possible rotation of the first Chairs in Figure \ref {fig:chairsVoxels}\relax }{figure.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Categories and their N for Train partition, N is the total number of selected rotations\relax }}{4}{table.caption.6}\protected@file@percent }
+\newlabel{tab:modelRotations}{{1}{4}{Categories and their N for Train partition, N is the total number of selected rotations\relax }{table.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Distributions Before (in blue) and After (in orange) the data augmentation\relax }}{4}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:finalTrainSetDistribution}{{4}{4}{Distributions Before (in blue) and After (in orange) the data augmentation\relax }{figure.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Our Bagging datasets compositions\relax }}{4}{table.caption.8}\protected@file@percent }
+\newlabel{tab:partitions}{{2}{4}{Our Bagging datasets compositions\relax }{table.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Learning Framework}{4}{section.5}\protected@file@percent }
+\newlabel{sec:learning_framework}{{V}{4}{Learning Framework}{section.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Single Layer of a 3D Backbone\relax }}{5}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:blockDiagram}{{5}{5}{Single Layer of a 3D Backbone\relax }{figure.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Blocks of CNN 3D Backbone\relax }}{5}{table.caption.10}\protected@file@percent }
+\newlabel{tab:conv-layers}{{3}{5}{Blocks of CNN 3D Backbone\relax }{table.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Fully connected layers\relax }}{5}{table.caption.11}\protected@file@percent }
+\newlabel{tab:fc-layers}{{4}{5}{Fully connected layers\relax }{table.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Results}{5}{section.6}\protected@file@percent }
+\newlabel{sec:results}{{VI}{5}{Results}{section.6}{}}
+\citation{graham2017submanifold}
+\citation{mao2021voxel}
 \bibdata{biblio}
-\bibcite{Zargham-2011}{1}
-\newlabel{eq:sigmoid_comma}{{2}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Results}{5}{}\protected@file@percent }
-\newlabel{sec:results}{{VI}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Concluding Remarks}{5}{}\protected@file@percent }
-\newlabel{sec:conclusions}{{VII}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {VIII}Exam rules}{5}{}\protected@file@percent }
-\bibcite{Sadler-2006}{2}
-\bibcite{Shannon-1948}{3}
-\bibcite{Boyd-2011}{4}
-\bibcite{Zordan-2014}{5}
+\bibcite{liu2019pointvoxel}{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Training of the Weak Model M0. The upper part shows losses on train and validation sets, and the lower part shows the accuracy on validation\relax }}{6}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:trainingPlot}{{6}{6}{Training of the Weak Model M0. The upper part shows losses on train and validation sets, and the lower part shows the accuracy on validation\relax }{figure.caption.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Weak models and ensembled model precisions on the classes\relax }}{6}{table.caption.13}\protected@file@percent }
+\newlabel{tab:precisions}{{5}{6}{Weak models and ensembled model precisions on the classes\relax }{table.caption.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Concluding Remarks}{6}{section.7}\protected@file@percent }
+\newlabel{sec:conclusions}{{VII}{6}{Concluding Remarks}{section.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Confusion Matrix of the Ensembled Model\relax }}{6}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:confusion_matrix}{{7}{6}{Confusion Matrix of the Ensembled Model\relax }{figure.caption.14}{}}
+\newacro{CNN}[CNN]{Convolutional Neural Networks}
+\newacro{IID}[i.i.d.]{Independent and Identically Distributed}
+\bibcite{7298801}{2}
+\bibcite{sedaghat2017orientationboosted}{3}
+\bibcite{7353481}{4}
+\bibcite{mao2021voxel}{5}
+\bibcite{zhong2017random}{6}
+\bibcite{devries2017improved}{7}
+\bibcite{Zhou2018}{8}
+\bibcite{graham2017submanifold}{9}
 \bibstyle{ieeetr}
-\@writefile{toc}{\contentsline {section}{References}{6}{}\protected@file@percent }
-\gdef \@abspage@last{6}
+\@writefile{toc}{\contentsline {section}{References}{7}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Individual Contribution}{7}{section.8}\protected@file@percent }
+\gdef \@abspage@last{7}

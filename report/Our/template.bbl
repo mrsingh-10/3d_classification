@@ -1,28 +1,42 @@
 \begin{thebibliography}{1}
 
-\bibitem{Zargham-2011}
-M.~Zargham, A.~Ribeiro, A.~Ozdaglar, and A.~Jadbabaie, ``{Accelerated dual
-  descent for network optimization},'' in {\em {American Control Conference}},
-  ({San Francisco, CA, US}), June 2011.
+\bibitem{liu2019pointvoxel}
+Z.~Liu, H.~Tang, Y.~Lin, and S.~Han, ``Point-voxel cnn for efficient 3d deep
+  learning,'' 2019.
 
-\bibitem{Sadler-2006}
-C.~M. Sadler and M.~Martonosi, ``{Data compression algorithms for
-  energy-constrained devices in delay tolerant networks},'' in {\em {ACM
-  SenSys}}, ({Boulder, CO, US}), Oct. 2006.
+\bibitem{7298801}
+Z.~Wu, S.~Song, A.~Khosla, F.~Yu, L.~Zhang, X.~Tang, and J.~Xiao, ``3d
+  shapenets: A deep representation for volumetric shapes,'' in {\em 2015 IEEE
+  Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pp.~1912--1920, 2015.
 
-\bibitem{Shannon-1948}
-C.~E. Shannon, ``A mathematical theory of communication,'' {\em {The Bell
-  System Technical Journal}}, vol.~27, pp.~379--423, July 1948.
+\bibitem{sedaghat2017orientationboosted}
+N.~Sedaghat, M.~Zolfaghari, E.~Amiri, and T.~Brox, ``Orientation-boosted voxel
+  nets for 3d object recognition,'' 2017.
 
-\bibitem{Boyd-2011}
-S.~Boyd, N.~Parikh, E.~Chu, and B.~P.~J. Eckstein, ``{Distributed Optimization
-  and Statistical Learning via the Alternating Direction Method of
-  Multipliers},'' {\em {Foundations and Trends in Machine Learning}}, vol.~3,
-  pp.~1--122, Jan. 2011.
+\bibitem{7353481}
+D.~Maturana and S.~Scherer, ``Voxnet: A 3d convolutional neural network for
+  real-time object recognition,'' in {\em 2015 IEEE/RSJ International
+  Conference on Intelligent Robots and Systems (IROS)}, pp.~922--928, 2015.
 
-\bibitem{Zordan-2014}
-D.~Zordan, B.~Martinez, I.~Vilajosana, and M.~Rossi, ``{On the Performance of
-  Lossy Compression Schemes for Energy Constrained Sensor Networking},'' {\em
-  {ACM Transactions on Sensor Networks}}, vol.~11, pp.~15:1--15:34, Aug. 2014.
+\bibitem{mao2021voxel}
+J.~Mao, Y.~Xue, M.~Niu, H.~Bai, J.~Feng, X.~Liang, H.~Xu, and C.~Xu, ``Voxel
+  transformer for 3d object detection,'' 2021.
+
+\bibitem{zhong2017random}
+Z.~Zhong, L.~Zheng, G.~Kang, S.~Li, and Y.~Yang, ``Random erasing data
+  augmentation,'' 2017.
+
+\bibitem{devries2017improved}
+T.~DeVries and G.~W. Taylor, ``Improved regularization of convolutional neural
+  networks with cutout,'' 2017.
+
+\bibitem{Zhou2018}
+Q.-Y. Zhou, J.~Park, and V.~Koltun, ``{Open3D}: {A} modern library for {3D}
+  data processing,'' {\em arXiv:1801.09847}, 2018.
+
+\bibitem{graham2017submanifold}
+B.~Graham and L.~van~der Maaten, ``Submanifold sparse convolutional networks,''
+  2017.
 
 \end{thebibliography}

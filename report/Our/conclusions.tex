@@ -2,21 +2,32 @@
 
 \section{Concluding Remarks}
 \label{sec:conclusions}
+% What I would like to see here is:
+% 1) a very short summary of what done,
+% 2) some (possibly) intelligent observations on the relevance and applicability of your algorithms / findings,
 
-\red{This section should take max half a column, I personally find it difficult to come up with really useful observations, I mean ones that bring a new contribution with respect to what you have already expounded in the ``Results'' section. In case you have some serious stuff to write, you may also extend the section to 3/4 of a column :-).}\\
+The solution proposed in this paper provides a good accuracy, moreover we found  several advantages compared with a standard CNN model.
 
-In many papers, here you find a summary of what done. It is basically an abstract where instead of using the present tense you use the past participle, as you refer to something that you have already developed in the previous sections. While I did it myself in the past, I now find it rather useless.\\ 
+First, the memory requirements problem related to the Voxel grid is mitigated. 
+%Since each weak model can be trained alone, we required to keep in memory only a portion of the dataset at a time. 
+The solution implemented is very scalable, i.e. there are no specific constraints on the number of weak models, even if it's suggested to choose this number based on the availability of data. 
 
-\MR{\textbf{What I would like to see here is:} 
-\begin{enumerate}
-\item a very short summary of what done, 
-\item some (possibly) intelligent observations on the relevance and {\it applicability} of your algorithms / findings, 
-\item what is still missing, and can be added in the future to extend your work.\\
-\end{enumerate}
-The idea is that this section should be {\it useful} and not just a repetition of the abstract (just \mbox{re-phrased} and written using a different tense...).}\\
+The execution of the whole system is also dynamic and can be adapted based on the potentiality of the computer in which it is executed. 
+% 3) what is still missing, and can be added in the future to
+% extend your work.
+%In fact, since we use many small models that may run in parallel, the final prediction time may be lower than the amount of time required for the execution of a single bigger neural network. 
+The model created can still be improved and enhanced using a larger number of models, and a larger dataset. 
+Beyond enlarging the dataset and the number of models used for the final prediction for the Bagging, we can use another type of ensembling, i.e. Boosting. In our opinion, with Boosting we can further improve the results by paying more attention to wrongly classified classes like desk, dresser, night\_stand and table.
+Furthermore, we would also like to explore the potential of sparse CNN \cite{graham2017submanifold} and transformers \cite{mao2021voxel} in classification task, to capture also long-range context information.\\
+% 4 & 5 required by professor:
+% Moreover: being a project report, I would also like to see
+% a specific paragraph stating
+% 4) what you have learned, and
+% 5) any difficulties you may have encountered.
+% This report showcases the work of the authors from the University of Padua on Project 3 (3D Objects Classification) of the Neural Network and Deep Learning Course.
+% Our goal was to create a solution to classify Voxelized 3D objects, using Machine Learning techniques and ModelNet10 dataset as our reference.
 
-\red{\textbf{Moreover:} being a project report, I would also like to see a specific paragraph stating 
-\begin{enumerate}
-\item[4)] what you have learned, and 
-\item[5)] any difficulties you may have encountered.
-\end{enumerate}}
+During the development of this project we had possibility to develop the models on both, keras and pytorch, and we found that keras is much beginner-friendly than pytorch.
+Another remark is that python libraries for 3D object manipulation are specialized for meshes and point clouds, but they don't provide full functionalities to work with voxel grid, we tested \textit{\href{http://www.open3d.org/}{open3d}} and  \textit{\href{https://trimsh.org/index.html}{trimesh}}, the popular ones. Even though Trimesh has more functions to work with voxels, the exportation of the voxel grids is not fully supported, so we used open3d for this project.
+Finally, we trained our models on Colab and Kaggle, one of the free platforms that provide free GPU for the training, and we found that with colab is easier to connect with drive thus easier to comunicate between the notebook and drive itself for exchanging data. On the other hand, Kaggle provides different types of GPU and TPU. And for our bagging models, we trained the models in parallel, thus saving half of the training time.
+% All the code is available in our Git repository at:  \mbox{\textit{\href{https://github.com/mrsingh-10/3d_classification}{https://github.com/mrsingh-10/3d\_classification}}}. \\

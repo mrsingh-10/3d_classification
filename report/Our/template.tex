@@ -23,6 +23,7 @@
 \usepackage{setspace}
 \usepackage{bm}
 \usepackage{stackengine}
+\usepackage[hidelinks]{hyperref}
 
 \usepackage{listings}
 
@@ -94,11 +95,14 @@
 
 % \IEEEoverridecommandlockouts\IEEEpubid{\makebox[\columnwidth]{PUT COPYRIGHT NOTICE HERE \hfill} \hspace{\columnsep}\makebox[\columnwidth]{ }} 
 
-\title{``We Rock the Hizzle and Stuff'' \\ hints on how to write a nice research essay}
+\title{Ensembling CNN models for 3D Object Classification based on Voxel Grid representation}
 
-\author{Michele Rossi$^\dag$, Jacopo Pegoraro$^\dag$
-\thanks{$^\dag$Department of Information Engineering, University of Padova, \newline email: \texttt{\{name.surname\}@unipd.it}}
-\thanks{Special thanks / acknowledgement go here.}
+\author{
+    Simone D'Antimo$^\dag$, Harjot Singh$^\dag$, Jacopo Pegoraro$^\dag$
+    \thanks{$^\dag$Department of Information Engineering, University of Padova,   \newline email: \texttt{\{simone.dantimo, harjot.singh\}@studenti.unipd.it,
+    jacopo.pegoraro@unipd.it
+    }}
+    %\thanks{Special thanks to professor Jacopo Pegoraro}
 } 
 
 \IEEEoverridecommandlockouts
@@ -110,64 +114,53 @@
 \begin{document}
 
 \maketitle
-
 \begin{abstract}
-Future vehicular communication networks call for new solutions to support their capacity demands, by leveraging the potential of the \mbox{millimeter-wave} (\mbox{mm-wave}) spectrum. Mobility, in particular, poses severe challenges in their design, and as such shall be accounted for. A key question in \mbox{mm-wave} vehicular networks is how to optimize the \mbox{trade-off} between directive Data Transmission (DT) and directional Beam Training (BT), which enables it. In this paper, learning tools are investigated to optimize this \mbox{trade-off}. In the proposed scenario, a Base Station (BS) uses BT to establish a \mbox{mm-wave} directive link towards a Mobile User (MU) moving along a road. To control the BT/DT \mbox{trade-off}, a Partially Observable (PO) Markov Decision Process (MDP) is formulated, where the system state corresponds to the position of the MU within the road link. The goal is to maximize the number of bits delivered by the BS to the MU over the communication session, under a power constraint. The resulting optimal policies reveal that adaptive BT/DT procedures significantly outperform \mbox{common-sense} heuristic schemes, and that specific mobility features, such as user position estimates, can be effectively used to enhance the overall system performance and optimize the available system resources.\\ 
+\ac{CNN} have been widely used as Deep learning tools to enhance the spatial relationship among images and videos. In this paper, we illustrate the potential of CNN and Voxel grids for the 3D Object classification task. Intuitively, given a 3D image, we split it into blocks, each of those blocks may be only full or empty, which implies that the resolution of the 3D object is strongly correlated with the number of blocks in which they are split in, as trade-off more blocks implies more memory required for storage.
+We decided to evaluate the potentiality and the limits of a 3D Object Classification System having a limited amount of computational capacity and memory storage: those limitations imply that we must use samples with a lower resolution (i.e. composed by a limited number of voxel), loosing some details and shape of the objects, but at the same time the results obtained show that we created a robust model which perform efficient analysis and can classify the objects independently of their rotation. We were able to reach good results on the test set, with an accuracy rate of 88 percent at the end.
 
-\MR{This is an example abstract. It is $204$ words long, I would say an abstract should not be longer than $250$ words and some Transactions journals of the IEEE are currently putting a strict limit of $200$ words. Here, you should briefly state: 
-\begin{enumerate}
-\item the technical scenario/field of research and its timeliness/relevance in general (one sentence),
-\item what you do in the report/paper and why it is important, how it advances the state of the art in its field (a few sentences), 
-\item summarize the main and best results of your study/proposal/method (one or two sentences),
-\item (optional) how others could benefit from your results for further research, or within commercial products (one sentence).
-\end{enumerate}  
-The abstract is one of the most important parts of the paper/report. You have roughly one minute to catch the reader's attention. A poor abstract may already move you towards the rejection side in the reviewer's decision process. In the abstract, 1) establish the context, 2) motivate the problem, 3) briefly describe the solution, and 4) present the main results of your work. Ideally, use one (short) sentence for each of the previously mentioned items to keep your abstract short. Overall, this should be a short summary of the whole content of your paper, including your results.}\\
-
-\MR{See the abstract as a personal challenge for each of your papers. Finally, the abstract should contain the main message about your work, so that the reader will now what she/he can find even without reading it (as it is the case most of the times). The abstract is a mini-paper on its own and, as such, it is a major endeavor to write.}\\ 
-
-\red{I suggest to write the Abstract as the very last thing. You may sketch it at the beginning, but then always finalize it at the end.}
 \end{abstract}
 
+
 \IEEEkeywords
-Unsupervised Learning, Optimization, Neural Networks, Convolutional Neural Networks, Variational Autoencoders. \MR{A list of keywords defining the tools and the scenario. I would not go beyond {\it six} keywords.}
-\endIEEEkeywords
+Neural Networks, Convolutional Neural Networks, 3D Object Classification, Voxel Grid, ModelNet10, Data Augmentation.\endIEEEkeywords
 
+\begin{figure*}[h]
+\begin{center}
+        \centering
+        \includegraphics[width=\textwidth]{resources/pipeline.png}
+        \caption{Processing Pipeline. Starting from left, we have the voxelization of the ModelNet10 dataset, followed by data augmentation with new rotations. Next, we have the partitioning of the rotated dataset into five different subsets. The subsets are give as input to the bagging models for the training.}
+        \label{fig:pipeline}
+    \end{center}
+\end{figure*}
 
-\input{Intro}
+\input{intro}
 
 \input{related}
 
-\input{model}
+\input{pipeline}
+
+\input{dataset}
+
+\input{learning_framework}
 
 \input{results}
 
 \input{conclusions}
 
-\section{Exam rules}
-
-What you need to do to pass the exam:
-\begin{itemize}
-\item Optional: team up with another student. Max. group size is \textbf{three students} per group;
-\item Identify a project to work on, devise your own neural network architecture and test it on the provided dataset;
-\item \textbf{Prepare a written project report} including: i) diagrams, ii) configuration pars, iii) results, iv) your discussion;
-\item \textbf{Prior to presenting your work}: upload i) your written report and ii) the code;
-\item \textbf{Present your work} using slides (max. duration is 15 minutes): take turns in presenting your work, your individual contribution to the project should clearly emerge. 
-\end{itemize}
-
-Your final grade will be obtained taking into account the following criteria:
-\begin{itemize} 
-\item \textbf{Project} (50 points): originality (10 pt.) - data preprocessing techniques (10 pt.) - learning architectures (20 pt.) - comparison against other/existing approaches (10 pt.) 
-\item \textbf{Written report} (25 points): clarity of exposition (8 pt.) - completeness (9 pt.) - analysis of results (number and type of metrics used) (8 pt.)
-\item \textbf{Oral exposition} (25 points): duration (your talk must take max. 15 minutes, using slides) (15 pt.) - questions (10 pt.)
-\end{itemize}
-
-The final grade will be computed as
-\begin{equation}
-\textrm{grade} = \frac{\textrm{tot\_points} \times 30}{110}
-\end{equation}
+\input{acronyms}
 
 \bibliography{biblio}
+
 \bibliographystyle{ieeetr}
+
+\section{Individual Contribution}
+
+- Simone D'Antimo: CutOut function, Bagging (and voting function), From list of Voxel to Voxel-Grid function, first tries with the CNN models (Keras), Fine-tune of the CNN parameters.
+
+- Harjot Singh: 
+Voxelization of CAD models, Data Augmentation with Rotations, Adaptation from Keras to Pytorch, Fine-tune of the CNN parameters, implementation of ORION neural network, managed the workflow and front end of the final notebooks (Colab and Kaggle).
+
+We both equally contributed to all the sections of the report. We both help each other to perform the relative tasks.
 
 \end{document}
 

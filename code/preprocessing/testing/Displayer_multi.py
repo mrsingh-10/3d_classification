@@ -53,7 +53,7 @@ l = ["chair_0900", "chair_0902", "chair_0944", "chair_0952", "chair_0954",
 m = []
 v = []
 # Importing mesh
-i = 9
+i = 0
 for i, path in enumerate(l[i:i+1]):
     isTestModel = True
     filename = Helper.getFullPathForModel(
